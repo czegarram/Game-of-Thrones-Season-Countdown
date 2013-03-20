@@ -173,5 +173,39 @@ points="39.389,13.769 22.235,28.606 6,28.606 6,47.699 21.989,47.699 39.389,62.75
       return false;
     });
     </script>
+
+    <!-- Analytics -->
+    <!-- Start of Woopra Code -->
+<script type="text/javascript">
+function woopraReady(tracker) {
+    tracker.setDomain('gameofthronescountdown.com');
+    tracker.setIdleTimeout(60000);
+    tracker.track();
+    return false;
+}
+(function() {
+    var wsc = document.createElement('script');
+    wsc.src = document.location.protocol+'//static.woopra.com/js/woopra.js';
+    wsc.type = 'text/javascript';
+    wsc.async = true;
+    var ssc = document.getElementsByTagName('script')[0];
+    ssc.parentNode.insertBefore(wsc, ssc);
+})();
+</script>
+<!-- End of Woopra Code -->
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9559262-9']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
 </body>
 </html>
