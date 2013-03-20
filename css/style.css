@@ -3,7 +3,7 @@ body { background: #09090a url("../img/dark_leather.png") top left repeat; font-
 body.default .ct_sect { display: inline-block; width: 180px; font-size: 4.5em; text-align: center; margin-top: 0.7em; color: #ccd; -webkit-transition: all 100ms ease-in-out; -moz-transition: all 100ms ease-in-out; -ms-transition: all 100ms ease-in-out; -o-transition: all 100ms ease-in-out; transition: all 100ms ease-in-out; }
 body.default .ct_sect .label { font-size: 0.22em; margin-top: 0.1em; }
 body.default .house_main { margin: 0; height: 292px; width: 100%; overflow: hidden; border-radius: 0; margin: 0 auto; margin-top: 2.5em; background: transparent url("../img/main_got_logo2.png") center center no-repeat; -webkit-transition: all 300ms ease-in-out; -moz-transition: all 300ms ease-in-out; -ms-transition: all 300ms ease-in-out; -o-transition: all 300ms ease-in-out; transition: all 300ms ease-in-out; }
-@media only screen and (max-width: 788px) { body.default .house_main { background-size: 100%; height: 150px; } }
+@media only screen and (max-width: 570px) { body.default .house_main { background-size: 100%; height: 150px; } }
 body.default .house_select { opacity: 1; -webkit-transition: all 100ms ease-in-out; -moz-transition: all 100ms ease-in-out; -ms-transition: all 100ms ease-in-out; -o-transition: all 100ms ease-in-out; transition: all 100ms ease-in-out; }
 body.default .house_select li.remove { display: none; }
 
