@@ -8,36 +8,31 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- iOS and standard icons -->
-<!--   <link href="img/favicon.ico" rel="shortcut icon">
+  <link href="img/favicon.ico" rel="shortcut icon">
   <link href="img/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
- -->
+
   <!-- Social Meta shit -->
-  <!-- <meta property="og:title" content="Breaking Bad Series Finale Countdown" />
-  <meta property="og:description" content="Counting down to the last half of Breaking Bad on AMC." />
+  <meta property="og:title" content="Game of Thrones Season 3 Countdown on HBO" />
+  <meta property="og:description" content="Countding down to the Season 3 Premiere of Game of Thrones, on HBO." />
   <meta content='yes' name='apple-mobile-web-app-capable'>
   <meta content='black' name='apple-mobile-web-app-status-bar-style'>
   <meta content='Breaking Bad' name='apple-mobile-web-app-title'>
   <meta property="og:type" content="tv_show" />
   <meta property="og:url" content="http://gameofthronescountdown.com" />
-  <meta property="og:image" content="http://gameofthronescountdown.com/img/facebook_icon.png" />
-  <meta property="og:site_name" content="Breaking Bad Series Finale Countdown" />
-  <meta property="fb:admins" content="590293659" /> -->
+  <meta property="og:image" content="http://gameofthronescountdown.com/img/share.png" />
+  <meta property="og:site_name" content="Game of Thrones Season 3 Countdown on HBO" />
+  <meta property="fb:admins" content="590293659" />
 </head>
-<body>
+<body class="default">
 
-<ul class="house_select">
-  <li><a href="#" data-house="arryn">Arryn</a></li>
-  <li><a href="#" data-house="baratheon">Baratheon</a></li>
-  <li><a href="#" data-house="greyjoy">Greyjoy</a></li>
-  <li><a href="#" data-house="lannister">Lannister</a></li>
-  <li><a href="#" data-house="stark">Stark</a></li>
-  <li><a href="#" data-house="frey">Frey</a></li>
-  <li><a href="#" data-house="stark">Tyrell</a></li>
-  <li><a href="#" data-house="targaryen">Targaryen</a></li>
-  <li><a href="#" data-house="tully">Tully</a></li>
-</ul>
+  <div class="tr"></div>
+  <div class="tl"></div>
+  <div class="bl"></div>
+  <div class="br"></div>
 
-  <span id="got_countdown">
+  <div class="house_main"></div>
+
+  <div id="got_countdown" class="countdown_wrap">
     <div class="ct_sect days">
       <span>{dn}</span>
       <span class="label">{dl}</span>
@@ -54,16 +49,112 @@
       <span>{sn}</span>
       <span class="label">{sl}</span>
     </div>
-  </span>
+  </div>
 
-  <script type="text/javascript" src="//use.typekit.net/xkh8lla.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <ul class="house_select">
+    <li><a href="#" data-house="baratheon dark" class="baratheon">Baratheon</a></li>
+    <li><a href="#" data-house="greyjoy light" class="greyjoy">Greyjoy</a></li>
+    <li><a href="#" data-house="lannister dark" class="lannister">Lannister</a></li>
+    <li><a href="#" data-house="stark dark" class="stark">Stark</a></li>
+    <li><a href="#" data-house="frey dark" class="frey">Frey</a></li>
+    <li><a href="#" data-house="arryn dark" class="arryn">Arryn</a></li>
+    <li><a href="#" data-house="targaryen light" class="targaryen">Targaryen</a></li>
+    <li><a href="#" data-house="tully light" class="tully">Tully</a></li>
+    <li><a href="#" data-house="tyrell dark" class="tyrell">Tully</a></li>
+    <li class="remove"><a href="#" data-house="default" class="default">No House</a></li>
+  </ul>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery.countdown.js"></script>
   <script type="text/javascript">
     var airDate = new Date(2013, 3-1, 31, 18);
     $('#got_countdown').countdown({until: airDate,
     layout: $('#got_countdown').html()});
+  </script>
+  <div class="social_links">
+    <div class="like_button">
+    <div class="fb-like fb_edge_widget_with_comment fb_iframe_widget" style="margin-bottom: 5px" data-href="http://gameofthronescountdown.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" fb-xfbml-state="rendered"><span style="height: 20px; width: 84px;"><iframe id="f3e820c38" name="f71123b7c" scrolling="no" style="border: none; overflow: hidden; height: 20px; width: 84px;" title="Like this content on Facebook." class="fb_ltr" src="http://www.facebook.com/plugins/like.php?api_key=213463372050860&amp;locale=en_US&amp;sdk=joey&amp;channel_url=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D19%23cb%3Df327764018%26origin%3Dhttp%253A%252F%252Fgameofthronescountdown.com%252Ff3460fe474%26domain%3Dgameofthronescountdown.com%26relation%3Dparent.parent&amp;href=http%3A%2F%2Fgameofthronescountdown.com&amp;node_type=link&amp;width=450&amp;layout=button_count&amp;colorscheme=light&amp;show_faces=false&amp;send=false&amp;extended_social_context=false"></iframe></span></div>
+    <iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.1363148939.html#_=1363773781056&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fgameofthronescountdown.com%2F&amp;size=m&amp;text=Game%20of%20Thrones%3A%20Season%203%20Countdown&amp;url=http%3A%2F%2Fgameofthronescountdown.com%2F" class="twitter-share-button twitter-count-horizontal" style="width: 107px; height: 20px;" title="Twitter Tweet Button" data-twttr-rendered="true"></iframe>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+  </div>
+
+
+<!-- Game of Thrones theme  (thanks Tim Pietrusky timpietrusky.com ) -->
+<audio></audio>
+
+<div id="player">
+  <svg role="paused" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.0" id="layer1" width="40px" height="40px" viewBox="0 0 75 75">
+  <g><polygon
+     points="39.389,13.769 22.235,28.606 6,28.606 6,47.699 21.989,47.699 39.389,62.75 39.389,13.769"
+     style="stroke:#727884;stroke-width:5;stroke-linejoin:round;fill:#727884;" />
+  <path
+     d="M 48.651772,50.269646 69.395223,25.971024"
+     style="fill:none;stroke:#727884;stroke-width:5;stroke-linecap:round"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <path
+     d="M 69.395223,50.269646 48.651772,25.971024"
+     style="fill:none;stroke:#727884;stroke-width:5;stroke-linecap:round"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  </g>
+  </svg>
+
+  <svg role="playing" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.0" width="40px" height="40px" viewBox="0 0 75 75">
+    <g>
+      <polygon
+points="39.389,13.769 22.235,28.606 6,28.606 6,47.699 21.989,47.699 39.389,62.75 39.389,13.769" style="stroke:#727884;stroke-width:5;stroke-linejoin:round;fill:#727884;"
+/>
+    <path
+        d="M 48.128,49.03 C 50.057,45.934 51.19,42.291 51.19,38.377 C 51.19,34.399 50.026,30.703 48.043,27.577" style="fill:none;stroke:#727884;stroke-width:5;stroke-linecap:round"/>
+    <path
+      d="M 55.082,20.537 C 58.777,25.523 60.966,31.694 60.966,38.377 C 60.966,44.998 58.815,51.115 55.178,56.076" style="fill:none;stroke:#727884;stroke-width:5;stroke-linecap:round"/>
+
+    <path
+      d="M 61.71,62.611 C 66.977,55.945 70.128,47.531 70.128,38.378 C 70.128,29.161 66.936,20.696 61.609,14.01"
+      style="fill:none;stroke:#727884;stroke-width:5;stroke-linecap:round"/>
+    </g>
+  </svg>
+</div>
+
+
+  <script type="text/javascript" src="//use.typekit.net/xkh8lla.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
+
+  <!-- Theme song initiate -->
+  <script type="text/javascript">
+
+  /**
+   *
+   * Thanks to televisiontunes.com for the Game of Thrones theme
+   */
+  var audio = $('audio').get(0),
+      _paused = $('svg[role="paused"]'),
+      _playing = $('svg[role="playing"]');
+
+  audio.src = Modernizr.audio.ogg ?
+    '../audio/Game of Thrones.ogg' :
+    '../audio/Game of Thrones.mp3';
+
+  _paused.click(function() {
+    $(this).css('display', 'none');
+    _playing.css('display', 'block');
+    audio.play();
+  });
+
+  _playing.click(function() {
+    $(this).css('display', 'none');
+    _paused.css('display', 'block');
+    audio.pause();
+  });
+
+  // Set to start
+  $("audio").bind('ended', function(){
+      _playing.css('display', 'none');
+      _paused.css('display', 'block');
+      this.currentTime = 0;
+  });
   </script>
   <script>
 

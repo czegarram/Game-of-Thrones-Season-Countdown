@@ -1,18 +1,120 @@
 @import 'reset.css';
+@import 'bourbon';
 
 // Styles for the countdown
 
 body {
-  background: url('../img/retina_dust.png') top left repeat;
+  // background: url('../img/retina_dust.png') top left repeat;
+  background: #09090a url('http://gameofthronescountdown.com/images/dark_leather.png') top left repeat;
   font-family: "trajan-pro-3-1","trajan-pro-3-2", serif;
   font-size: 16px;
+  @include transition(all 100ms ease-in-out);
+  &.dark {
+
+  }
+  &.light {
+
+  }
+  &.default {
+    .ct_sect {
+      display: inline-block;
+      width: 180px;
+      font-size: 4.5em;
+      text-align: center;
+      margin-top: 0.7em;
+      color: #ccd;
+      @include transition(all 100ms ease-in-out);
+      .label {
+        font-size: 0.22em;
+        margin-top: 0.1em;
+      }
+    }
+    .house_main {
+      margin: 0;
+      height: 292px;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 0;
+      margin: 0 auto;
+      margin-top: 2.5em;
+      background: transparent url('../img/main_got_logo2.png') center center no-repeat;
+      @include transition(all 300ms ease-in-out);
+      // background-size: 100%;
+      // opacity: 0.9;
+    }
+    .house_select {
+      opacity: 1;
+      @include transition(all 100ms ease-in-out);
+      li.remove {
+        display: none;
+      }
+
+    }
+  }
+}
+
+.social_links {
+  opacity: 0.4;
+  bottom: 1.5em;
+  left: 1.2em;
+  position: absolute;
+  z-index: 999999;
+  &:hover, &:focus {
+    opacity: 1;
+    @include transition(all 300ms ease-in-out);
+  }
+}
+
+.tl, .tr, .br, .bl {
+  position: absolute;
+  z-index: 5;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.tl {
+  background: transparent url('../img/top_left.png') top left no-repeat;
+  top: 0;
+  left: 0;
+  width: 549px;
+  height: 319px;
+}
+
+.tr {
+  background: transparent url('../img/top_right.png') top right no-repeat;
+  top: 0;
+  right: 0;
+  width: 498px;
+  height: 375px;
+}
+
+.bl {
+  background: transparent url('../img/bottom_left.png') bottom left no-repeat;
+  bottom: 0;
+  left: 0;
+  width: 521px;
+  height: 483px;
+}
+
+.br {
+  background: transparent url('../img/bottom_right.png') bottom right no-repeat;
+  bottom: 0;
+  right: 0;
+  width: 516px;
+  height: 312px;
+}
+
+.countdown_wrap {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .ct_sect {
   display: inline-block;
-  width: 200px;
+  width: 150px;
   font-size: 4em;
   text-align: center;
+  margin-top: 1em;
   .label {
     display: block;
     font-size:.3em;
@@ -20,96 +122,221 @@ body {
   }
 }
 
+.house_select {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  opacity: 0.3;
+  z-index: 999;
+  @include transition(all 100ms ease-in-out);
+  &:hover, &:focus {
+    opacity: 1;
+  }
+  li {
+    display: inline-block;
+    margin-bottom: 1em;
+    a {
+      width: 48px;
+      margin: 0 5px;
+      height: 48px;
+      background: transparent;
+      border-radius: 50%;
+      text-indent: -9999px;
+      display: inline-block;
+      opacity: 0.5;
+      &:hover, &:focus {
+        opacity: 1;
+        @include transition(all 50ms ease-in);
+      }
+      &.baratheon {
+        background: url('../img/houses/baratheon.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+      &.stark {
+        background: url('../img/houses/stark.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+      &.lannister {
+        background: url('../img/houses/lannister.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+      &.targaryen {
+        background: url('../img/houses/targaryen.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+      &.tully {
+        background: url('../img/houses/tully.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+      &.arryn {
+        background: url('../img/houses/arryn.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+      &.frey {
+        background: url('../img/houses/frey.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+      &.tyrell {
+        background: url('../img/houses/tyrell.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+      &.greyjoy {
+        background: url('../img/houses/greyjoy.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+      &.default {
+        background: url('../img/houses/remove.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+    }
+  }
+}
+
+.house_main {
+  border-radius: 50%;
+  width: 172px;
+  height: 172px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  @include transition(all 100ms ease-in-out);
+}
 
 .baratheon {
-  background: #e3bb31;
+  background: #e3bb31 url('../img/bg_houses/baratheon.png') top left repeat;
   color: #1f1a1f;
+  .house_main {
+    background: url('../img/houses/baratheon.png') center center no-repeat;
+  }
   a {
     color: #1f1a1f;
   }
 }
 
 .stark {
-  // #8eb574 green accent
-  background: #ebe8de;
+  background: #ebe8de url('../img/bg_houses/stark.png') top left repeat;
   color:#020202;
+  .house_main {
+    background: url('../img/houses/stark.png') center center no-repeat;
+  }
   a {
     color:#020202;
   }
   .label {
-    color: #8eb574;
+    color: #7d8d66;
     opacity: 1;
   }
 }
 
 .lannister {
-  background: #88322f;
-  color: #ccb68c;
+  background: #70201f url('../img/bg_houses/lannister.png') top left repeat;
+  color: #cebe94;
+  .house_main {
+    background: url('../img/houses/lannister.png') center center no-repeat;
+  }
   a {
-    color: #ccb68c;
+    color: #cebe94;
   }
 }
 
 .tully {
-  background: #1e1e35;
+  background: #1e1e35 url('../img/bg_houses/tully.png') top left repeat;
   color: #c2b68d;
+  .label {
+    color: #9f4241;
+    opacity: 1;
+  }
+  .house_main {
+    background: url('../img/houses/tully.png') center center no-repeat;
+  }
   a {
     color: #c2b68d;
   }
 }
 
 .targaryen {
-  background: #060601;
+  background: #060601 url('../img/bg_houses/targaryen.png') top left repeat;
   color: #972721;
+  .label {
+    color: #cfc7b8;
+  }
+  .house_main {
+    background: url('../img/houses/targaryen.png') center center no-repeat;
+  }
   a {
     color: #972721;
   }
 }
 
 .arryn {
-  background: #32334e;
+  background: #212340 url('../img/bg_houses/arryn.png') top left repeat;
   color: #cdcfb0;
+  .house_main {
+    background: url('../img/houses/arryn.png') center center no-repeat;
+  }
   a {
     color: #cdcfb0;
   }
 }
 
 .frey {
-  background: #1e1c3c;
+  background: #1e1c3c url('../img/bg_houses/frey.png') top left repeat;
   color: #cfc7ac;
+  .house_main {
+    background: url('../img/houses/frey.png') center center no-repeat;
+  }
   a {
     color: #cfc7ac;
   }
 }
 
 .tyrell {
-  background: #899773;
+  background: #404a34 url('../img/bg_houses/tyrell.png') top left repeat;
   color: #d6af35;
+  .label {
+    color: #d4be89;
+  }
+  .house_main {
+    background: url('../img/houses/tyrell.png') center center no-repeat;
+  }
   a {
     color: #d6af35;
   }
 }
 
 .greyjoy {
-  background: #0b0a07;
+  background: #0b0a07 url('../img/bg_houses/greyjoy.png') top left repeat;
   color: #debd4e;
+  .house_main {
+    background: url('../img/houses/greyjoy.png') center center no-repeat;
+  }
   a {
     color: #debd4e;
   }
 }
 
-// #got_countdown span { display: block; float: left; width: 70px; height: 103px;
-//     background: url('../img/countdownGOT.png') no-repeat 0px 0px; }
-// #got_countdown span.image0 { background-position: -0px 0px; }
-// #got_countdown span.image1 { background-position: -80px 0px; width:60px; }
-// #got_countdown span.image2 { background-position: -160px 0px; }
-// #got_countdown span.image3 { background-position: -240px 0px; }
-// #got_countdown span.image4 { background-position: -320px 0px; }
-// #got_countdown span.image5 { background-position: -400px 0px; }
-// #got_countdown span.image6 { background-position: -480px 0px; }
-// #got_countdown span.image7 { background-position: -560px 0px; }
-// #got_countdown span.image8 { background-position: -640px 0px; }
-// #got_countdown span.image9 { background-position: -720px 0px; }
-// #got_countdown span.imageDay { background-position: -100px 0px; }
-// #got_countdown span.imageSep { background-position: -110px 0px; }
-// #got_countdown span.imageSpace { background-position: -120px 0px; }
+#player {
+  position:fixed;
+  z-index: 999;
+  top:20px;
+  right:20px;
+  -webkit-transition: all .1s ease-in;
+  -moz-transition: all .1s ease-in;
+  -ms-transition: all .1s ease-in;
+  -o-transition: all .1s ease-in;
+  transition: all .1s ease-in;
+  opacity:.6;
+  cursor:pointer;
+}
+
+#player:hover {
+  opacity:1;
+}
+
+#player svg[role="playing"] {
+  display:none;
+}
