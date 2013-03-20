@@ -1,29 +1,26 @@
 @import url(reset.css);
-@import url(jquery.countdown.css);
-#got_countdown span { display: block; float: left; width: 10px; height: 21px; background: url("../img/countdownLED.png") no-repeat 0px 0px; }
+body { background: url("../img/retina_dust.png") top left repeat; }
+
+.ct_sect { display: inline-block; width: 200px; }
+
+#got_countdown span { display: block; float: left; width: 70px; height: 103px; background: url("../img/countdownGOT.png") no-repeat 0px 0px; }
 
 #got_countdown span.image0 { background-position: 0px 0px; }
 
-#got_countdown span.image1 { background-position: -10px 0px; }
+#got_countdown span.image1 { background-position: -80px 0px; width: 60px; }
 
-#got_countdown span.image2 { background-position: -20px 0px; }
+#got_countdown span.image2 { background-position: -160px 0px; }
 
-#got_countdown span.image3 { background-position: -30px 0px; }
+#got_countdown span.image3 { background-position: -240px 0px; }
 
-#got_countdown span.image4 { background-position: -40px 0px; }
+#got_countdown span.image4 { background-position: -320px 0px; }
 
-#got_countdown span.image5 { background-position: -50px 0px; }
+#got_countdown span.image5 { background-position: -400px 0px; }
 
-#got_countdown span.image6 { background-position: -60px 0px; }
+#got_countdown span.image6 { background-position: -480px 0px; }
 
-#got_countdown span.image7 { background-position: -70px 0px; }
+#got_countdown span.image7 { background-position: -560px 0px; }
 
-#got_countdown span.image8 { background-position: -80px 0px; }
+#got_countdown span.image8 { background-position: -640px 0px; }
 
-#got_countdown span.image9 { background-position: -90px 0px; }
-
-#got_countdown span.imageDay { background-position: -100px 0px; }
-
-#got_countdown span.imageSep { background-position: -110px 0px; }
-
-#got_countdown span.imageSpace { background-position: -120px 0px; }
+#got_countdown span.image9 { background-position: -720px 0px; }
