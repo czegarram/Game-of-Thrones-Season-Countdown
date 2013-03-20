@@ -4,25 +4,112 @@
 
 body {
   background: url('../img/retina_dust.png') top left repeat;
+  font-family: "trajan-pro-3-1","trajan-pro-3-2", serif;
+  font-size: 16px;
 }
 
 .ct_sect {
   display: inline-block;
   width: 200px;
+  font-size: 4em;
+  text-align: center;
+  .label {
+    display: block;
+    font-size:.3em;
+    opacity: 0.8;
+  }
 }
 
-#got_countdown span { display: block; float: left; width: 70px; height: 103px;
-    background: url('../img/countdownGOT.png') no-repeat 0px 0px; }
-#got_countdown span.image0 { background-position: -0px 0px; }
-#got_countdown span.image1 { background-position: -80px 0px; width:60px; }
-#got_countdown span.image2 { background-position: -160px 0px; }
-#got_countdown span.image3 { background-position: -240px 0px; }
-#got_countdown span.image4 { background-position: -320px 0px; }
-#got_countdown span.image5 { background-position: -400px 0px; }
-#got_countdown span.image6 { background-position: -480px 0px; }
-#got_countdown span.image7 { background-position: -560px 0px; }
-#got_countdown span.image8 { background-position: -640px 0px; }
-#got_countdown span.image9 { background-position: -720px 0px; }
+
+.baratheon {
+  background: #e3bb31;
+  color: #1f1a1f;
+  a {
+    color: #1f1a1f;
+  }
+}
+
+.stark {
+  // #8eb574 green accent
+  background: #ebe8de;
+  color:#020202;
+  a {
+    color:#020202;
+  }
+  .label {
+    color: #8eb574;
+    opacity: 1;
+  }
+}
+
+.lannister {
+  background: #88322f;
+  color: #ccb68c;
+  a {
+    color: #ccb68c;
+  }
+}
+
+.tully {
+  background: #1e1e35;
+  color: #c2b68d;
+  a {
+    color: #c2b68d;
+  }
+}
+
+.targaryen {
+  background: #060601;
+  color: #972721;
+  a {
+    color: #972721;
+  }
+}
+
+.arryn {
+  background: #32334e;
+  color: #cdcfb0;
+  a {
+    color: #cdcfb0;
+  }
+}
+
+.frey {
+  background: #1e1c3c;
+  color: #cfc7ac;
+  a {
+    color: #cfc7ac;
+  }
+}
+
+.tyrell {
+  background: #899773;
+  color: #d6af35;
+  a {
+    color: #d6af35;
+  }
+}
+
+.greyjoy {
+  background: #0b0a07;
+  color: #debd4e;
+  a {
+    color: #debd4e;
+  }
+}
+
+// #got_countdown span { display: block; float: left; width: 70px; height: 103px;
+//     background: url('../img/countdownGOT.png') no-repeat 0px 0px; }
+// #got_countdown span.image0 { background-position: -0px 0px; }
+// #got_countdown span.image1 { background-position: -80px 0px; width:60px; }
+// #got_countdown span.image2 { background-position: -160px 0px; }
+// #got_countdown span.image3 { background-position: -240px 0px; }
+// #got_countdown span.image4 { background-position: -320px 0px; }
+// #got_countdown span.image5 { background-position: -400px 0px; }
+// #got_countdown span.image6 { background-position: -480px 0px; }
+// #got_countdown span.image7 { background-position: -560px 0px; }
+// #got_countdown span.image8 { background-position: -640px 0px; }
+// #got_countdown span.image9 { background-position: -720px 0px; }
 // #got_countdown span.imageDay { background-position: -100px 0px; }
 // #got_countdown span.imageSep { background-position: -110px 0px; }
 // #got_countdown span.imageSpace { background-position: -120px 0px; }

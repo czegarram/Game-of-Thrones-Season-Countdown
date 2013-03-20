@@ -1,26 +1,33 @@
 @import url(reset.css);
-body { background: url("../img/retina_dust.png") top left repeat; }
+body { background: url("../img/retina_dust.png") top left repeat; font-family: "trajan-pro-3-1", "trajan-pro-3-2", serif; font-size: 16px; }
 
-.ct_sect { display: inline-block; width: 200px; }
+.ct_sect { display: inline-block; width: 200px; font-size: 4em; text-align: center; }
+.ct_sect .label { display: block; font-size: .3em; opacity: 0.8; }
 
-#got_countdown span { display: block; float: left; width: 70px; height: 103px; background: url("../img/countdownGOT.png") no-repeat 0px 0px; }
+.baratheon { background: #e3bb31; color: #1f1a1f; }
+.baratheon a { color: #1f1a1f; }
 
-#got_countdown span.image0 { background-position: 0px 0px; }
+.stark { background: #ebe8de; color: #020202; }
+.stark a { color: #020202; }
+.stark .label { color: #8eb574; opacity: 1; }
 
-#got_countdown span.image1 { background-position: -80px 0px; width: 60px; }
+.lannister { background: #88322f; color: #ccb68c; }
+.lannister a { color: #ccb68c; }
 
-#got_countdown span.image2 { background-position: -160px 0px; }
+.tully { background: #1e1e35; color: #c2b68d; }
+.tully a { color: #c2b68d; }
 
-#got_countdown span.image3 { background-position: -240px 0px; }
+.targaryen { background: #060601; color: #972721; }
+.targaryen a { color: #972721; }
 
-#got_countdown span.image4 { background-position: -320px 0px; }
+.arryn { background: #32334e; color: #cdcfb0; }
+.arryn a { color: #cdcfb0; }
 
-#got_countdown span.image5 { background-position: -400px 0px; }
+.frey { background: #1e1c3c; color: #cfc7ac; }
+.frey a { color: #cfc7ac; }
 
-#got_countdown span.image6 { background-position: -480px 0px; }
+.tyrell { background: #899773; color: #d6af35; }
+.tyrell a { color: #d6af35; }
 
-#got_countdown span.image7 { background-position: -560px 0px; }
-
-#got_countdown span.image8 { background-position: -640px 0px; }
-
-#got_countdown span.image9 { background-position: -720px 0px; }
+.greyjoy { background: #0b0a07; color: #debd4e; }
+.greyjoy a { color: #debd4e; }

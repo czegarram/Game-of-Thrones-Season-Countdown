@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- iOS and standard icons -->
-  <link href="img/favicon.ico" rel="shortcut icon">
+<!--   <link href="img/favicon.ico" rel="shortcut icon">
   <link href="img/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
-
+ -->
   <!-- Social Meta shit -->
-  <meta property="og:title" content="Breaking Bad Series Finale Countdown" />
+  <!-- <meta property="og:title" content="Breaking Bad Series Finale Countdown" />
   <meta property="og:description" content="Counting down to the last half of Breaking Bad on AMC." />
   <meta content='yes' name='apple-mobile-web-app-capable'>
   <meta content='black' name='apple-mobile-web-app-status-bar-style'>
@@ -21,36 +21,58 @@
   <meta property="og:url" content="http://gameofthronescountdown.com" />
   <meta property="og:image" content="http://gameofthronescountdown.com/img/facebook_icon.png" />
   <meta property="og:site_name" content="Breaking Bad Series Finale Countdown" />
-  <meta property="fb:admins" content="590293659" />
+  <meta property="fb:admins" content="590293659" /> -->
 </head>
 <body>
 
+<ul class="house_select">
+  <li><a href="#" data-house="arryn">Arryn</a></li>
+  <li><a href="#" data-house="baratheon">Baratheon</a></li>
+  <li><a href="#" data-house="greyjoy">Greyjoy</a></li>
+  <li><a href="#" data-house="lannister">Lannister</a></li>
+  <li><a href="#" data-house="stark">Stark</a></li>
+  <li><a href="#" data-house="frey">Frey</a></li>
+  <li><a href="#" data-house="stark">Tyrell</a></li>
+  <li><a href="#" data-house="targaryen">Targaryen</a></li>
+  <li><a href="#" data-house="tully">Tully</a></li>
+</ul>
+
   <span id="got_countdown">
     <div class="ct_sect days">
-      <span class="image{d10}"></span>
-      <span class="image{d1}"></span>
+      <span>{dn}</span>
+      <span class="label">{dl}</span>
     </div>
     <div class="ct_sect hours">
-      <span class="image{h10}"></span>
-      <span class="image{h1}"></span>
+      <span>{hn}</span>
+      <span class="label">{hl}</span>
     </div>
     <div class="ct_sect minutes">
-      <span class="image{m10}"></span>
-      <span class="image{m1}"></span>
+      <span>{mn}</span>
+      <span class="label">{ml}</span>
     </div>
     <div class="ct_sect seconds">
-      <span class="image{s10}"></span>
-      <span class="image{s1}"></span>
+      <span>{sn}</span>
+      <span class="label">{sl}</span>
     </div>
   </span>
 
+  <script type="text/javascript" src="//use.typekit.net/xkh8lla.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery.countdown.js"></script>
-
   <script type="text/javascript">
     var airDate = new Date(2013, 3-1, 31, 18);
-    $('#got_countdown').countdown({until: airDate, compact: true,
+    $('#got_countdown').countdown({until: airDate,
     layout: $('#got_countdown').html()});
   </script>
+  <script>
+
+    $('.house_select li a').click(function(event) {
+      event.preventDefault();
+      var house = $(this).data('house');
+      $('body').removeClass().addClass(house);
+      return false;
+    });
+    </script>
 </body>
 </html>
