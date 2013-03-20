@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en_US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Countdown to Season 3 of Game of Thrones on HBO</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- iOS and standard icons -->
+  <link href="img/favicon.ico" rel="shortcut icon">
+  <link href="img/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
+
+  <!-- Social Meta shit -->
+  <meta property="og:title" content="Breaking Bad Series Finale Countdown" />
+  <meta property="og:description" content="Counting down to the last half of Breaking Bad on AMC." />
+  <meta content='yes' name='apple-mobile-web-app-capable'>
+  <meta content='black' name='apple-mobile-web-app-status-bar-style'>
+  <meta content='Breaking Bad' name='apple-mobile-web-app-title'>
+  <meta property="og:type" content="tv_show" />
+  <meta property="og:url" content="http://gameofthronescountdown.com" />
+  <meta property="og:image" content="http://gameofthronescountdown.com/img/facebook_icon.png" />
+  <meta property="og:site_name" content="Breaking Bad Series Finale Countdown" />
+  <meta property="fb:admins" content="590293659" />
+</head>
+<body>
+
+  <span id="got_countdown">
+    <span class="image{d10}"></span>
+    <span class="image{d1}"></span>
+    <span class="imageDay"></span>
+    <span class="imageSpace"></span>
+    <span class="image{h10}"></span>
+    <span class="image{h1}"></span>
+    <span class="imageSep"></span>
+    <span class="image{m10}"></span>
+    <span class="image{m1}"></span>
+    <span class="imageSep"></span>
+    <span class="image{s10}"></span>
+    <span class="image{s1}"></span>
+  </span>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.countdown.js"></script>
+
+  <script type="text/javascript">
+    var airDate = new Date(2013, 3-1, 31, 18);
+    $('#got_countdown').countdown({until: airDate, compact: true,
+    layout: $('#got_countdown').html()});
+  </script>
+</body>
+</html>
