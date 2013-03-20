@@ -13,7 +13,7 @@ body.default .house_select li.remove { display: none; }
   .social_links .fb-like { position: relative; left: -10px; } }
 .social_links:hover, .social_links:focus { opacity: 1; -webkit-transition: all 300ms ease-in-out; -moz-transition: all 300ms ease-in-out; -ms-transition: all 300ms ease-in-out; -o-transition: all 300ms ease-in-out; transition: all 300ms ease-in-out; }
 
-.tl, .tr, .br, .bl { position: absolute; z-index: 5; overflow: hidden; opacity: 0.5; }
+.tl, .tr, .br, .bl { position: fixed; z-index: 5; overflow: hidden; opacity: 0.5; }
 @media only screen and (max-width: 500px) { .tl, .tr, .br, .bl { width: 100% !important; } }
 
 .tl { background: transparent url("../img/top_left.png") top left no-repeat; top: 0; left: 0; width: 549px; height: 319px; }
