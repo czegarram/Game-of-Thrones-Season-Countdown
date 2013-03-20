@@ -62,15 +62,15 @@
   </div>
 
   <ul class="house_select">
-    <li><a href="#" data-house="baratheon dark" class="baratheon">Baratheon</a></li>
-    <li><a href="#" data-house="greyjoy light" class="greyjoy">Greyjoy</a></li>
-    <li><a href="#" data-house="lannister dark" class="lannister">Lannister</a></li>
-    <li><a href="#" data-house="stark dark" class="stark">Stark</a></li>
-    <li><a href="#" data-house="frey dark" class="frey">Frey</a></li>
-    <li><a href="#" data-house="arryn dark" class="arryn">Arryn</a></li>
-    <li><a href="#" data-house="targaryen light" class="targaryen">Targaryen</a></li>
-    <li><a href="#" data-house="tully light" class="tully">Tully</a></li>
-    <li><a href="#" data-house="tyrell dark" class="tyrell">Tully</a></li>
+    <li><a href="#" data-house="baratheon" class="baratheon">Baratheon</a></li>
+    <li><a href="#" data-house="greyjoy" class="greyjoy">Greyjoy</a></li>
+    <li><a href="#" data-house="lannister" class="lannister">Lannister</a></li>
+    <li><a href="#" data-house="stark" class="stark">Stark</a></li>
+    <li><a href="#" data-house="frey" class="frey">Frey</a></li>
+    <li><a href="#" data-house="arryn" class="arryn">Arryn</a></li>
+    <li><a href="#" data-house="targaryen" class="targaryen">Targaryen</a></li>
+    <li><a href="#" data-house="tully" class="tully">Tully</a></li>
+    <li><a href="#" data-house="tyrell" class="tyrell">Tully</a></li>
     <li class="remove"><a href="#" data-house="default" class="default">No House</a></li>
   </ul>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
@@ -167,11 +167,20 @@ points="39.389,13.769 22.235,28.606 6,28.606 6,47.699 21.989,47.699 39.389,62.75
   });
   </script>
   <script>
+   // $("#clickme").click(function(){
+    var house = window.location.hash.substring(1);
+    if (house) {
+      $('body').removeClass().addClass(house);
+    }
+  // });
+  </script>
+  <script>
 
     $('.house_select li a').click(function(event) {
       event.preventDefault();
       var house = $(this).data('house');
       $('body').removeClass().addClass(house);
+      window.location.hash=house;
       return false;
     });
     </script>
