@@ -3,17 +3,18 @@ body { background: #09090a url("../img/dark_leather.png") top left repeat; font-
 body.default .ct_sect { display: inline-block; width: 180px; font-size: 4.5em; text-align: center; margin-top: 0.7em; color: #ccd; -webkit-transition: all 100ms ease-in-out; -moz-transition: all 100ms ease-in-out; -ms-transition: all 100ms ease-in-out; -o-transition: all 100ms ease-in-out; transition: all 100ms ease-in-out; }
 body.default .ct_sect .label { font-size: 0.22em; margin-top: 0.1em; }
 body.default .house_main { margin: 0; height: 292px; width: 100%; overflow: hidden; border-radius: 0; margin: 0 auto; margin-top: 2.5em; background: transparent url("../img/main_got_logo2.png") center center no-repeat; -webkit-transition: all 300ms ease-in-out; -moz-transition: all 300ms ease-in-out; -ms-transition: all 300ms ease-in-out; -o-transition: all 300ms ease-in-out; transition: all 300ms ease-in-out; }
-@media only screen and (max-width: 788px) { body.default .house_main { background-size: 100%; } }
+@media only screen and (max-width: 788px) { body.default .house_main { background-size: 100%; height: 150px; } }
 body.default .house_select { opacity: 1; -webkit-transition: all 100ms ease-in-out; -moz-transition: all 100ms ease-in-out; -ms-transition: all 100ms ease-in-out; -o-transition: all 100ms ease-in-out; transition: all 100ms ease-in-out; }
 body.default .house_select li.remove { display: none; }
 
 .social_links { opacity: 0.4; bottom: 1.5em; left: 1.2em; position: absolute; z-index: 999999; }
 @media only screen and (max-width: 788px) and (min-width: 570px) { .social_links { bottom: 90px; } }
-@media only screen and (max-width: 570px) { .social_links { bottom: 160px; left: 0; right: 0; text-align: center; margin: 0 auto; }
+@media only screen and (max-width: 570px) { .social_links { position: relative; text-align: center; margin: 0 auto; margin-top: 1em; width: 90% !important; }
   .social_links .fb-like { position: relative; left: -10px; } }
 .social_links:hover, .social_links:focus { opacity: 1; -webkit-transition: all 300ms ease-in-out; -moz-transition: all 300ms ease-in-out; -ms-transition: all 300ms ease-in-out; -o-transition: all 300ms ease-in-out; transition: all 300ms ease-in-out; }
 
 .tl, .tr, .br, .bl { position: absolute; z-index: 5; overflow: hidden; opacity: 0.5; }
+@media only screen and (max-width: 500px) { .tl, .tr, .br, .bl { width: 100% !important; } }
 
 .tl { background: transparent url("../img/top_left.png") top left no-repeat; top: 0; left: 0; width: 549px; height: 319px; }
 
@@ -23,12 +24,14 @@ body.default .house_select li.remove { display: none; }
 
 .br { background: transparent url("../img/bottom_right.png") bottom right no-repeat; bottom: 0; right: 0; width: 516px; height: 312px; }
 
-.countdown_wrap { margin: 0 auto; text-align: center; }
+.countdown_wrap { margin: 0 auto; text-align: center; width: 100% !important; padding: 0; margin: 0; }
 
 .ct_sect { display: inline-block; width: 150px; font-size: 4em; text-align: center; margin-top: 1em; }
+@media only screen and (max-width: 500px) { .ct_sect { margin-top: 0.2em !important; } }
 .ct_sect .label { display: block; font-size: .3em; opacity: 0.8; }
 
 .house_select { display: block; text-align: center; margin: 0 auto; position: absolute; bottom: 10px; left: 0; right: 0; opacity: 0.3; z-index: 999; -webkit-transition: all 100ms ease-in-out; -moz-transition: all 100ms ease-in-out; -ms-transition: all 100ms ease-in-out; -o-transition: all 100ms ease-in-out; transition: all 100ms ease-in-out; }
+@media only screen and (max-width: 600px) { .house_select { position: relative; width: 90%; bottom: 0; margin-top: 3em; margin-bottom: 3em; } }
 .house_select:hover, .house_select:focus { opacity: 1; }
 .house_select li { display: inline-block; margin-bottom: 1em; }
 .house_select li a { width: 48px; margin: 0 5px; height: 48px; background: transparent; border-radius: 50%; text-indent: -9999px; display: inline-block; opacity: 0.5; }
