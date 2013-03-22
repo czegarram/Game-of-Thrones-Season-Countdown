@@ -48,6 +48,10 @@ body.default .house_select li.remove { display: none; }
 .house_select li a.tyrell { background: url("../img/houses/tyrell.png") center center no-repeat; background-size: 48px 48px; }
 .house_select li a.greyjoy { background: url("../img/houses/greyjoy.png") center center no-repeat; background-size: 48px 48px; }
 .house_select li a.default { background: url("../img/houses/remove.png") center center no-repeat; background-size: 48px 48px; }
+.house_select li a.gryffindor { background: url("../img/houses/gryffindor.png") center center no-repeat; background-size: 48px 48px; }
+.house_select li a.slytherin { background: url("../img/houses/slytherin.png") center center no-repeat; background-size: 48px 48px; }
+.house_select li a.hufflepuff { background: url("../img/houses/hufflepuff.png") center center no-repeat; background-size: 48px 48px; }
+.house_select li a.ravenclaw { background: url("../img/houses/ravenclaw.png") center center no-repeat; background-size: 48px 48px; }
 
 .house_main { border-radius: 50%; width: 172px; height: 172px; text-align: center; margin: 0 auto; margin-top: 50px; -webkit-transition: all 100ms ease-in-out; -moz-transition: all 100ms ease-in-out; -ms-transition: all 100ms ease-in-out; -o-transition: all 100ms ease-in-out; transition: all 100ms ease-in-out; }
 
@@ -90,6 +94,26 @@ body.default .house_select li.remove { display: none; }
 .greyjoy { background: #0b0a07 url("../img/bg_houses/greyjoy.png") top left repeat; color: #debd4e; }
 .greyjoy .house_main { background: url("../img/houses/greyjoy.png") center center no-repeat; }
 .greyjoy a, .greyjoy a:visited { color: #debd4e; }
+
+.gryffindor { color: #d6af35; }
+.gryffindor .label { color: #e5291f; }
+.gryffindor .house_main { background: transparent url("../img/houses/gryffindor.png") center center no-repeat; border-radius: 0; }
+.gryffindor a, .gryffindor a:visited { color: #d6af35; }
+
+.slytherin { color: #2fb040; }
+.slytherin .label { color: #dad8d9; }
+.slytherin .house_main { background: transparent url("../img/houses/slytherin.png") center center no-repeat; border-radius: 0; }
+.slytherin a, .slytherin a:visited { color: #2fb040; }
+
+.hufflepuff { color: #d6af35; }
+.hufflepuff .label { color: #afaea9; }
+.hufflepuff .house_main { background: transparent url("../img/houses/hufflepuff.png") center center no-repeat; border-radius: 0; }
+.hufflepuff a, .hufflepuff a:visited { color: #d6af35; }
+
+.ravenclaw { color: #0a9fcc; }
+.ravenclaw .label { color: #dac297; }
+.ravenclaw .house_main { background: transparent url("../img/houses/ravenclaw.png") center center no-repeat; border-radius: 0; }
+.ravenclaw a, .ravenclaw a:visited { color: #0a9fcc; }
 
 #player { position: fixed; z-index: 999; top: 20px; right: 20px; -webkit-transition: all 0.1s ease-in; -moz-transition: all 0.1s ease-in; -ms-transition: all 0.1s ease-in; -o-transition: all 0.1s ease-in; transition: all 0.1s ease-in; opacity: .6; cursor: pointer; }
 

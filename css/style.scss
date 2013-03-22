@@ -224,6 +224,24 @@ body {
         background: url('../img/houses/remove.png') center center no-repeat;
         background-size: 48px 48px;
       }
+
+      // Harry Potter
+      &.gryffindor {
+        background: url('../img/houses/gryffindor.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+      &.slytherin {
+        background: url('../img/houses/slytherin.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+      &.hufflepuff {
+        background: url('../img/houses/hufflepuff.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
+      &.ravenclaw {
+        background: url('../img/houses/ravenclaw.png') center center no-repeat;
+        background-size: 48px 48px;
+      }
     }
   }
 }
@@ -350,6 +368,72 @@ body {
     color: #debd4e;
   }
 }
+
+// Harry Potter
+
+.gryffindor {
+  // background: #404a34 url('../img/bg_houses/gryffindor.png') top left repeat;
+  color: #d6af35;
+  .label {
+    color: #e5291f;
+  }
+  .house_main {
+    background: transparent url('../img/houses/gryffindor.png') center center no-repeat;
+    border-radius: 0;
+  }
+  a, a:visited {
+    color: #d6af35;
+  }
+}
+
+
+.slytherin {
+  // background: #404a34 url('../img/bg_houses/slytherin.png') top left repeat;
+  color: #2fb040;
+  .label {
+    color: #dad8d9;
+  }
+  .house_main {
+    background: transparent url('../img/houses/slytherin.png') center center no-repeat;
+    border-radius: 0;
+  }
+  a, a:visited {
+    color: #2fb040;
+  }
+}
+
+
+.hufflepuff {
+  // background: #404a34 url('../img/bg_houses/hufflepuff.png') top left repeat;
+  color: #d6af35;
+  .label {
+    color: #afaea9;
+  }
+  .house_main {
+    background: transparent url('../img/houses/hufflepuff.png') center center no-repeat;
+    border-radius: 0;
+  }
+  a, a:visited {
+    color: #d6af35;
+  }
+}
+
+
+.ravenclaw {
+  // background: #404a34 url('../img/bg_houses/ravenclaw.png') top left repeat;
+  color: #0a9fcc;
+  .label {
+    color: #dac297;
+  }
+  .house_main {
+    background: transparent url('../img/houses/ravenclaw.png') center center no-repeat;
+    border-radius: 0;
+  }
+  a, a:visited {
+    color: #0a9fcc;
+  }
+}
+
 
 #player {
   position:fixed;
