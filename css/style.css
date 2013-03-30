@@ -1,4 +1,6 @@
 @import url(reset.css);
+.seo { height: 0; position: absolute; top: -400px; left: -1000px; text-indent: -999999px; }
+
 body { background: #09090a url("../img/dark_leather.png") top left repeat; font-family: "trajan-pro-3-1", "trajan-pro-3-2", serif; font-size: 16px; -webkit-transition: all 100ms ease-in-out; -moz-transition: all 100ms ease-in-out; -ms-transition: all 100ms ease-in-out; -o-transition: all 100ms ease-in-out; transition: all 100ms ease-in-out; }
 body a, body a:visited { color: #aab; }
 body a:hover, body a:focus { text-decoration: none; }
