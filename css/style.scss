@@ -5,12 +5,22 @@
 
 .seo { height: 0; position: absolute; top: -400px; left: -1000px; text-indent: -999999px; }
 
+#world {
+  background: transparent;
+  position: fixed;
+}
+
 body {
   // background: url('../img/retina_dust.png') top left repeat;
   background: #09090a url('../img/dark_leather.png') top left repeat;
   font-family: "trajan-pro-3-1","trajan-pro-3-2", serif;
   font-size: 16px;
   @include transition(all 100ms ease-in-out);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  // overflow: hidden;
   a, a:visited {
     color: #aab;
   }
