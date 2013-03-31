@@ -43,10 +43,6 @@
   <div class="house_main"></div>
 
   <div id="got_countdown" class="countdown_wrap">
-    <div class="ct_sect days">
-      <span>{dn}</span>
-      <span class="label">{dl}</span>
-    </div>
     <div class="ct_sect hours">
       <span>{hn}</span>
       <span class="label">{hl}</span>
@@ -77,7 +73,7 @@
   <script type="text/javascript" src="js/jquery.countdown.js"></script>
   <script type="text/javascript">
     // UTC-4 = 9pm
-    // UTC = next day, UTC at 1am    
+    // UTC = next day, UTC at 1am
     var airDate = new Date(Date.UTC(2013, (4-1), 1, 1, 0, 0));
     $('#got_countdown').countdown({until: airDate,
     layout: $('#got_countdown').html()});
