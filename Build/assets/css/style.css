@@ -15,23 +15,32 @@ body {
   margin: 0;
   padding: 0; }
   body.tully {
-    background-color: #00173d; }
+    background-color: #00173d;
+    color: white; }
   body.targaryan {
-    background-color: black; }
+    background-color: #cd381a;
+    color: black; }
   body.baratheon {
-    background-color: black; }
+    background-color: black;
+    color: #fdce20; }
   body.lannister {
-    background-color: #901510; }
+    background-color: #901510;
+    color: #f1b52b; }
   body.tyrell {
-    background-color: #006600; }
+    background-color: #006600;
+    color: #f2b62e; }
   body.stark {
-    background-color: #989898; }
+    background-color: #989898;
+    color: #ece6db; }
   body.arryn {
-    background-color: #151c53; }
+    background-color: #151c53;
+    color: #d1cebb; }
   body.martell {
-    background-color: #e12812; }
+    background-color: #e12312;
+    color: #faa703; }
   body.greyjoy {
-    background-color: black; }
+    background-color: black;
+    color: #ffcc39; }
 
 .countdown {
   width: 960px;
