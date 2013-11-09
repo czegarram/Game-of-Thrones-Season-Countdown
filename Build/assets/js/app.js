@@ -1,6 +1,15 @@
 (function() {
   $(document).ready(function() {
-    var activateHouse, hideHouses, nextNavItem, prevNavItem, routeURLHash, updateNav, updateNavText, updateTheme, updateURLHash;
+    var activateHouse, hideHouses, nextNavItem, prevNavItem, resetTheme, routeURLHash, runCountdown, updateNav, updateNavText, updateTheme, updateURLHash;
+    runCountdown = function() {
+      var airDate;
+      airDate = new Date(Date.UTC(2014, 3 - 1, 19, 3, 0, 0));
+      return $("#countdown").countdown({
+        until: airDate,
+        layout: $("#countdown").html()
+      });
+    };
+    runCountdown();
     updateNav = function(house) {
       if (house) {
         return $(".selector").addClass("active");
@@ -63,15 +72,18 @@
         return false;
       }
     };
+    resetTheme = function() {
+      $(".houses").removeClass("active");
+      updateNavText(false);
+      updateURLHash(false);
+      return updateTheme(false);
+    };
     $(".nav_text").click(function() {
       $(".houses").toggleClass("active");
       return false;
     });
     $(".clear").click(function() {
-      $(".houses").removeClass("active");
-      updateNavText(false);
-      updateURLHash(false);
-      updateTheme(false);
+      resetTheme();
       return false;
     });
     $(".house a").click(function(event) {
@@ -97,6 +109,46 @@
     });
     KeyboardJS.on("right", function() {
       nextNavItem();
+      return false;
+    });
+    KeyboardJS.on("esc, escape", function() {
+      resetTheme();
+      return false;
+    });
+    KeyboardJS.on("1", function() {
+      $(".house:first-child a").click();
+      return false;
+    });
+    KeyboardJS.on("2", function() {
+      $(".house:nth-child(2) a").click();
+      return false;
+    });
+    KeyboardJS.on("3", function() {
+      $(".house:nth-child(3) a").click();
+      return false;
+    });
+    KeyboardJS.on("4", function() {
+      $(".house:nth-child(4) a").click();
+      return false;
+    });
+    KeyboardJS.on("5", function() {
+      $(".house:nth-child(5) a").click();
+      return false;
+    });
+    KeyboardJS.on("6", function() {
+      $(".house:nth-child(6) a").click();
+      return false;
+    });
+    KeyboardJS.on("7", function() {
+      $(".house:nth-child(7) a").click();
+      return false;
+    });
+    KeyboardJS.on("8", function() {
+      $(".house:nth-child(8) a").click();
+      return false;
+    });
+    KeyboardJS.on("9", function() {
+      $(".house:nth-child(9) a").click();
       return false;
     });
     return routeURLHash();

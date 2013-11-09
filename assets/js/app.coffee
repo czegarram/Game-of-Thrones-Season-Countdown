@@ -1,5 +1,11 @@
 
 $(document).ready ->
+  runCountdown = ->
+    airDate = new Date(Date.UTC(2014, (3 - 1), 19, 3, 0, 0))
+    $("#countdown").countdown
+      until: airDate
+      layout: $("#countdown").html()
+  runCountdown()
 
   updateNav = (house) ->
     if house
@@ -58,15 +64,19 @@ $(document).ready ->
       updateTheme hash
       false
 
-  $(".nav_text").click ->
-    $(".houses").toggleClass "active"
-    false
-
-  $(".clear").click ->
+  resetTheme = ->
     $(".houses").removeClass "active"
     updateNavText false
     updateURLHash false
     updateTheme false
+
+  $(".nav_text").click ->
+    $(".houses").toggleClass "active"
+    false
+
+
+  $(".clear").click ->
+    resetTheme()
     false
 
   $(".house a").click (event) ->
@@ -91,6 +101,53 @@ $(document).ready ->
 
   KeyboardJS.on "right", ->
     nextNavItem()
+    false
+
+  KeyboardJS.on "esc, escape", ->
+    resetTheme()
+    false
+
+  # Number keys assigned to each house
+
+  KeyboardJS.on "1", ->
+    $(".house:first-child a").click()
+    false
+
+  KeyboardJS.on "2", ->
+    $(".house:nth-child(2) a").click()
+    false
+
+  KeyboardJS.on "3", ->
+    $(".house:nth-child(3) a").click()
+    false
+
+  KeyboardJS.on "4", ->
+    $(".house:nth-child(4) a").click()
+    false
+
+
+  KeyboardJS.on "5", ->
+    $(".house:nth-child(5) a").click()
+    false
+
+
+  KeyboardJS.on "6", ->
+    $(".house:nth-child(6) a").click()
+    false
+
+
+  KeyboardJS.on "7", ->
+    $(".house:nth-child(7) a").click()
+    false
+
+
+  KeyboardJS.on "8", ->
+    $(".house:nth-child(8) a").click()
+    false
+
+
+  KeyboardJS.on "9", ->
+    $(".house:nth-child(9) a").click()
     false
 
 
