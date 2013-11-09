@@ -4,6 +4,7 @@ $(document).ready ->
     airDate = new Date(Date.UTC(2014, (3 - 1), 19, 3, 0, 0))
     $("#countdown").countdown
       until: airDate
+      format: 'ODHMS'
       layout: $("#countdown").html()
 
   runCountdown()
