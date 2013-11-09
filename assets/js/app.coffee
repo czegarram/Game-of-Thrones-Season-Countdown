@@ -5,7 +5,19 @@ $(document).ready ->
     $("#countdown").countdown
       until: airDate
       format: 'ODHMS'
+      tickInterval: 1
+      # onTick: watchCountdown()
       layout: $("#countdown").html()
+
+  # watchCountdown = (periods) ->
+  #   if $("body").hasClass "slideshow"
+  #     alert "asdf"
+
+  # Mousetrap.bind "up up down down left right left right b a", (e) ->
+  #     e.preventDefault
+  #     # r = 1 + Math.floor(Math.random() * 9)
+  #     $("body").addClass("slideshow")
+
 
   runCountdown()
 
@@ -97,60 +109,71 @@ $(document).ready ->
     nextNavItem()
     false
 
-  KeyboardJS.on "left, h", ->
+  Mousetrap.bind "left", (e) ->
+    e.preventDefault
     prevNavItem()
     false
 
-  KeyboardJS.on "right", ->
+  Mousetrap.bind "right", (e) ->
+    e.preventDefault
     nextNavItem()
     false
 
-  KeyboardJS.on "esc, escape", ->
+  Mousetrap.bind "esc, escape", (e) ->
+    e.preventDefault
     resetTheme()
     false
 
   # Number keys assigned to each house
 
-  KeyboardJS.on "1", ->
+  Mousetrap.bind "1", (e) ->
+    e.preventDefault
     $(".house:first-child a").click()
     false
 
-  KeyboardJS.on "2", ->
+  Mousetrap.bind "2", (e) ->
+    e.preventDefault
     $(".house:nth-child(2) a").click()
     false
 
-  KeyboardJS.on "3", ->
+  Mousetrap.bind "3", (e) ->
+    e.preventDefault
     $(".house:nth-child(3) a").click()
     false
 
-  KeyboardJS.on "4", ->
+  Mousetrap.bind "4", (e) ->
+    e.preventDefault
     $(".house:nth-child(4) a").click()
     false
 
 
-  KeyboardJS.on "5", ->
+  Mousetrap.bind "5", (e) ->
+    e.preventDefault
     $(".house:nth-child(5) a").click()
     false
 
 
-  KeyboardJS.on "6", ->
+  Mousetrap.bind "6", (e) ->
+    e.preventDefault
     $(".house:nth-child(6) a").click()
     false
 
 
-  KeyboardJS.on "7", ->
+  Mousetrap.bind "7", (e) ->
+    e.preventDefault
     $(".house:nth-child(7) a").click()
     false
 
 
-  KeyboardJS.on "8", ->
+  Mousetrap.bind "8", (e) ->
+    e.preventDefault
     $(".house:nth-child(8) a").click()
     false
 
 
-  KeyboardJS.on "9", ->
+  Mousetrap.bind "9", (e) ->
+    e.preventDefault
     $(".house:nth-child(9) a").click()
     false
-
 
   routeURLHash()

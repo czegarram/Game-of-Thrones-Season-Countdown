@@ -6,7 +6,8 @@
       airDate = new Date(Date.UTC(2014, 3 - 1, 19, 3, 0, 0));
       return $("#countdown").countdown({
         until: airDate,
-        format: 'yODHMS',
+        format: 'ODHMS',
+        tickInterval: 1,
         layout: $("#countdown").html()
       });
     };
@@ -104,51 +105,63 @@
       nextNavItem();
       return false;
     });
-    KeyboardJS.on("left, h", function() {
+    Mousetrap.bind("left", function(e) {
+      e.preventDefault;
       prevNavItem();
       return false;
     });
-    KeyboardJS.on("right", function() {
+    Mousetrap.bind("right", function(e) {
+      e.preventDefault;
       nextNavItem();
       return false;
     });
-    KeyboardJS.on("esc, escape", function() {
+    Mousetrap.bind("esc, escape", function(e) {
+      e.preventDefault;
       resetTheme();
       return false;
     });
-    KeyboardJS.on("1", function() {
+    Mousetrap.bind("1", function(e) {
+      e.preventDefault;
       $(".house:first-child a").click();
       return false;
     });
-    KeyboardJS.on("2", function() {
+    Mousetrap.bind("2", function(e) {
+      e.preventDefault;
       $(".house:nth-child(2) a").click();
       return false;
     });
-    KeyboardJS.on("3", function() {
+    Mousetrap.bind("3", function(e) {
+      e.preventDefault;
       $(".house:nth-child(3) a").click();
       return false;
     });
-    KeyboardJS.on("4", function() {
+    Mousetrap.bind("4", function(e) {
+      e.preventDefault;
       $(".house:nth-child(4) a").click();
       return false;
     });
-    KeyboardJS.on("5", function() {
+    Mousetrap.bind("5", function(e) {
+      e.preventDefault;
       $(".house:nth-child(5) a").click();
       return false;
     });
-    KeyboardJS.on("6", function() {
+    Mousetrap.bind("6", function(e) {
+      e.preventDefault;
       $(".house:nth-child(6) a").click();
       return false;
     });
-    KeyboardJS.on("7", function() {
+    Mousetrap.bind("7", function(e) {
+      e.preventDefault;
       $(".house:nth-child(7) a").click();
       return false;
     });
-    KeyboardJS.on("8", function() {
+    Mousetrap.bind("8", function(e) {
+      e.preventDefault;
       $(".house:nth-child(8) a").click();
       return false;
     });
-    KeyboardJS.on("9", function() {
+    Mousetrap.bind("9", function(e) {
+      e.preventDefault;
       $(".house:nth-child(9) a").click();
       return false;
     });
