@@ -8,11 +8,15 @@ $(document).ready ->
   hideHouses = ->
     $(".houses").removeClass "active"
 
-  updateActivatorText = (text) ->
+  activateHouse = (house) ->
+    $(".house").removeClass("active")
+    $("a[data-house='" + house + "']").parent().addClass("active")
+
+  updateNavText = (text) ->
     if text
       $(".nav_text").text "house " + text
     else
-      $(".nav_text").text "select your house:"
+      $(".nav_text").text "Select your house:"
 
   updateURLHash = (text) ->
     if text
@@ -35,27 +39,24 @@ $(document).ready ->
   routeURLHash = (house) ->
     if house
       hideHouses()
-      updateActivatorText house
+      activateHouse house
+      updateNavText house
       updateURLHash house
       updateTheme house
       false
     else
       hash = window.location.hash.substring(1)
-      updateActivatorText hash
+      updateNavText hash
       updateTheme hash
       false
 
   $(".nav_text").click ->
     $(".houses").toggleClass "active"
-    if $(".houses").hasClass("active")
-      $(".nav_text").text "hide houses"
-    else
-      $(".nav_text").text "select your house:"
     false
 
   $(".clear").click ->
     $(".houses").removeClass "active"
-    updateActivatorText false
+    updateNavText false
     updateURLHash false
     updateTheme false
     false

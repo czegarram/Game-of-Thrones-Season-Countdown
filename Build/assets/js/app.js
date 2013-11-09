@@ -1,6 +1,6 @@
 (function() {
   $(document).ready(function() {
-    var hideHouses, routeURLHash, updateActivatorText, updateNav, updateTheme, updateURLHash;
+    var activateHouse, hideHouses, routeURLHash, updateNav, updateNavText, updateTheme, updateURLHash;
     updateNav = function(house) {
       if (house) {
         return $(".selector").addClass("active");
@@ -11,11 +11,15 @@
     hideHouses = function() {
       return $(".houses").removeClass("active");
     };
-    updateActivatorText = function(text) {
+    activateHouse = function(house) {
+      $(".house").removeClass("active");
+      return $("a[data-house='" + house + "']").parent().addClass("active");
+    };
+    updateNavText = function(text) {
       if (text) {
         return $(".nav_text").text("house " + text);
       } else {
-        return $(".nav_text").text("select your house:");
+        return $(".nav_text").text("Select your house:");
       }
     };
     updateURLHash = function(text) {
@@ -40,29 +44,25 @@
       var hash;
       if (house) {
         hideHouses();
-        updateActivatorText(house);
+        activateHouse(house);
+        updateNavText(house);
         updateURLHash(house);
         updateTheme(house);
         return false;
       } else {
         hash = window.location.hash.substring(1);
-        updateActivatorText(hash);
+        updateNavText(hash);
         updateTheme(hash);
         return false;
       }
     };
     $(".nav_text").click(function() {
       $(".houses").toggleClass("active");
-      if ($(".houses").hasClass("active")) {
-        $(".nav_text").text("hide houses");
-      } else {
-        $(".nav_text").text("select your house:");
-      }
       return false;
     });
     $(".clear").click(function() {
       $(".houses").removeClass("active");
-      updateActivatorText(false);
+      updateNavText(false);
       updateURLHash(false);
       updateTheme(false);
       return false;
