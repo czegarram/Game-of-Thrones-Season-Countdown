@@ -27,8 +27,8 @@ body {
       opacity: 0.15;
       margin-top: -3em; }
   body.baratheon {
-    background-color: #fdce20;
-    color: black; }
+    background-color: black;
+    color: #fdce20; }
     body.baratheon .house_logo {
       background-image: url(../baratheon-logo.png);
       margin-top: -5em; }

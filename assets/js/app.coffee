@@ -5,6 +5,7 @@ $(document).ready ->
     $("#countdown").countdown
       until: airDate
       layout: $("#countdown").html()
+
   runCountdown()
 
   updateNav = (house) ->
