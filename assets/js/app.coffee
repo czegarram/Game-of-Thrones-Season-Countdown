@@ -1,4 +1,6 @@
+
 $(document).ready ->
+
   updateNav = (house) ->
     if house
       $(".selector").addClass "active"
@@ -34,6 +36,11 @@ $(document).ready ->
       $(".clear").hide()
       updateNav false
 
+  prevNavItem = ->
+    $('.house.active').prev('.house').children('a').click()
+
+  nextNavItem = ->
+    $('.house.active').next('.house').children('a').click()
 
   # check url hash on page load
   routeURLHash = (house) ->
@@ -47,6 +54,7 @@ $(document).ready ->
     else
       hash = window.location.hash.substring(1)
       updateNavText hash
+      activateHouse hash
       updateTheme hash
       false
 
@@ -67,13 +75,23 @@ $(document).ready ->
     routeURLHash house
     false
 
+  $(".nav.left").click (event) ->
+    event.preventDefault()
+    prevNavItem()
+    false
+
+  $(".nav.right").click (event) ->
+    event.preventDefault()
+    nextNavItem()
+    false
+
+  KeyboardJS.on "left, h", ->
+    prevNavItem()
+    false
+
+  KeyboardJS.on "right", ->
+    nextNavItem()
+    false
+
+
   routeURLHash()
-
-# KeyboardJS.on "left, h", ->
-#   alert "asdf"
-#   prevNavItem()
-#   false
-
-# KeyboardJS.on "right, ;", ->
-#   nextNavItem()
-#   false

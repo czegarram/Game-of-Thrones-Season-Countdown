@@ -1,6 +1,6 @@
 (function() {
   $(document).ready(function() {
-    var activateHouse, hideHouses, routeURLHash, updateNav, updateNavText, updateTheme, updateURLHash;
+    var activateHouse, hideHouses, nextNavItem, prevNavItem, routeURLHash, updateNav, updateNavText, updateTheme, updateURLHash;
     updateNav = function(house) {
       if (house) {
         return $(".selector").addClass("active");
@@ -40,6 +40,12 @@
         return updateNav(false);
       }
     };
+    prevNavItem = function() {
+      return $('.house.active').prev('.house').children('a').click();
+    };
+    nextNavItem = function() {
+      return $('.house.active').next('.house').children('a').click();
+    };
     routeURLHash = function(house) {
       var hash;
       if (house) {
@@ -52,6 +58,7 @@
       } else {
         hash = window.location.hash.substring(1);
         updateNavText(hash);
+        activateHouse(hash);
         updateTheme(hash);
         return false;
       }
@@ -72,6 +79,24 @@
       event.preventDefault();
       house = $(this).data("house").toLowerCase();
       routeURLHash(house);
+      return false;
+    });
+    $(".nav.left").click(function(event) {
+      event.preventDefault();
+      prevNavItem();
+      return false;
+    });
+    $(".nav.right").click(function(event) {
+      event.preventDefault();
+      nextNavItem();
+      return false;
+    });
+    KeyboardJS.on("left, h", function() {
+      prevNavItem();
+      return false;
+    });
+    KeyboardJS.on("right", function() {
+      nextNavItem();
       return false;
     });
     return routeURLHash();
