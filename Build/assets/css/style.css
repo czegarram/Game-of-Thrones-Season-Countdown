@@ -14,6 +14,24 @@ body {
   font-weight: 300;
   margin: 0;
   padding: 0; }
+  body.tully {
+    background-color: #00173d; }
+  body.targaryan {
+    background-color: black; }
+  body.baratheon {
+    background-color: black; }
+  body.lannister {
+    background-color: #901510; }
+  body.tyrell {
+    background-color: #006600; }
+  body.stark {
+    background-color: #989898; }
+  body.arryn {
+    background-color: #151c53; }
+  body.martell {
+    background-color: #e12812; }
+  body.greyjoy {
+    background-color: black; }
 
 .countdown {
   width: 960px;
@@ -158,6 +176,3 @@ a {
   display: block; }
   a:hover, a:focus {
     color: #eeeeee; }
-
-body.tully {
-  background-color: green; }
