@@ -17,30 +17,78 @@ body {
   body.tully {
     background-color: #00173d;
     color: white; }
-  body.targaryan {
-    background-color: #cd381a;
-    color: black; }
-  body.baratheon {
+    body.tully .house_logo {
+      background-image: url(../tully-logo.png); }
+  body.targaryen {
     background-color: black;
-    color: #fdce20; }
+    color: #cd381a; }
+    body.targaryen .house_logo {
+      background-image: url(../targaryen-logo.png);
+      opacity: 0.15;
+      margin-top: -3em; }
+  body.baratheon {
+    background-color: #fdce20;
+    color: black; }
+    body.baratheon .house_logo {
+      background-image: url(../baratheon-logo.png);
+      margin-top: -5em; }
   body.lannister {
     background-color: #901510;
     color: #f1b52b; }
+    body.lannister .house_logo {
+      background-image: url(../lannister-logo.png);
+      margin-top: -3.5em; }
   body.tyrell {
     background-color: #006600;
     color: #f2b62e; }
+    body.tyrell .house_logo {
+      background-image: url(../tyrell-logo.png);
+      margin-top: -4em; }
   body.stark {
     background-color: #989898;
     color: #ece6db; }
+    body.stark .house_logo {
+      background-image: url(../stark-logo.png);
+      opacity: 0.25; }
   body.arryn {
     background-color: #151c53;
     color: #d1cebb; }
+    body.arryn .house_logo {
+      background-image: url(../arryn-logo.png); }
   body.martell {
     background-color: #e12312;
     color: #faa703; }
+    body.martell .house_logo {
+      background-image: url(../martell-logo.png);
+      opacity: 0.25;
+      margin-top: -3.5em; }
   body.greyjoy {
     background-color: black;
     color: #ffcc39; }
+    body.greyjoy .house_logo {
+      background-image: url(../greyjoy-logo.png);
+      margin-top: -4em; }
+
+.house_logo {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.1;
+  margin: -2em auto 0;
+  height: 100%;
+  width: 70px;
+  height: 70px;
+  background: transparent none center center no-repeat;
+  background-size: auto 100%;
+  transform-origin: center center;
+  -moz-transform: scale(8) rotateZ(0);
+  -webkit-transform: scale(8) rotateZ(0);
+  -o-transform: scale(8) rotateZ(0);
+  -ms-transform: scale(8) rotateZ(0);
+  transform: scale(8) rotateZ(0); }
 
 .countdown {
   width: 960px;
@@ -71,12 +119,42 @@ body {
   font-family: "trajan-pro-3-1", "trajan-pro-3-2", serif;
   font-weight: 300; }
 
+.selector {
+  width: 300px;
+  margin: 0 auto;
+  position: relative; }
+  .selector .nav {
+    display: none; }
+  .selector a {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: auto;
+    display: block;
+    padding: 0.6em;
+    border-radius: 15px; }
+  .selector.active .nav {
+    display: block;
+    position: absolute;
+    top: -1.2em;
+    padding: 1em;
+    opacity: 0.75;
+    font-size: 1.3em; }
+    .selector.active .nav.left {
+      left: 0; }
+    .selector.active .nav.right {
+      right: 0; }
+  .selector.active a {
+    padding: 0;
+    border-color: rgba(255, 255, 255, 0);
+    font-family: "trajan-pro-3-1", "trajan-pro-3-2", serif;
+    font-size: 1em; }
+
 footer {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 1em; }
   footer > ul {
     position: relative;
     width: 600px;
@@ -103,7 +181,7 @@ footer {
       font-weight: 300;
       position: relative;
       font-size: 1.4em;
-      color: #999999;
+      color: rgba(255, 255, 255, 0.6);
       z-index: 2; }
       footer li.logo small {
         font-size: 0.8em; }
@@ -116,25 +194,26 @@ footer {
         left: 0;
         right: 0;
         bottom: 1em;
-        z-index: 1; }
+        z-index: 1;
+        opacity: 0.75; }
 
 .houses {
   width: 690px;
-  margin: 0 auto 4em; }
+  margin: 0 auto 2em; }
   .houses li {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background: transarent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     margin: 0 1em 1em;
     opacity: 0;
     visibility: hidden;
-    -moz-transform: scale(0.8) translateY(25px);
-    -webkit-transform: scale(0.8) translateY(25px);
-    -o-transform: scale(0.8) translateY(25px);
-    -ms-transform: scale(0.8) translateY(25px);
-    transform: scale(0.8) translateY(25px);
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
     -ms-transition: all 200ms ease-in-out;
@@ -154,11 +233,11 @@ footer {
     opacity: 1;
     visibility: visible;
     top: 0;
-    -moz-transform: scale(1) translateY(25px);
-    -webkit-transform: scale(1) translateY(25px);
-    -o-transform: scale(1) translateY(25px);
-    -ms-transform: scale(1) translateY(25px);
-    transform: scale(1) translateY(25px);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
     -ms-transition: all 200ms ease-in-out;

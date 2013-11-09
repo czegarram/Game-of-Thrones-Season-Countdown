@@ -1,14 +1,21 @@
 (function() {
   $(document).ready(function() {
-    var hideHouses, routeURLHash, updateActivatorText, updateTheme, updateURLHash;
+    var hideHouses, routeURLHash, updateActivatorText, updateNav, updateTheme, updateURLHash;
+    updateNav = function(house) {
+      if (house) {
+        return $(".selector").addClass("active");
+      } else {
+        return $(".selector").removeClass("active");
+      }
+    };
     hideHouses = function() {
       return $(".houses").removeClass("active");
     };
     updateActivatorText = function(text) {
       if (text) {
-        return $(".house_activator").text("house: " + text);
+        return $(".nav_text").text("house " + text);
       } else {
-        return $(".house_activator").text("choose a house");
+        return $(".nav_text").text("select your house:");
       }
     };
     updateURLHash = function(text) {
@@ -21,10 +28,12 @@
     updateTheme = function(house) {
       if (house) {
         $("body").removeClass().addClass(house);
-        return $(".clear").css("display", "inline-block");
+        $(".clear").css("display", "inline-block");
+        return updateNav(house);
       } else {
         $("body").removeClass();
-        return $(".clear").hide();
+        $(".clear").hide();
+        return updateNav(false);
       }
     };
     routeURLHash = function(house) {
@@ -42,8 +51,13 @@
         return false;
       }
     };
-    $(".house_activator").click(function() {
+    $(".nav_text").click(function() {
       $(".houses").toggleClass("active");
+      if ($(".houses").hasClass("active")) {
+        $(".nav_text").text("hide houses");
+      } else {
+        $(".nav_text").text("select your house:");
+      }
       return false;
     });
     $(".clear").click(function() {

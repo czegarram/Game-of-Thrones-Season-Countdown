@@ -1,12 +1,18 @@
 $(document).ready ->
+  updateNav = (house) ->
+    if house
+      $(".selector").addClass "active"
+    else
+      $(".selector").removeClass "active"
+
   hideHouses = ->
     $(".houses").removeClass "active"
 
   updateActivatorText = (text) ->
     if text
-      $(".house_activator").text "house: " + text
+      $(".nav_text").text "house " + text
     else
-      $(".house_activator").text "choose a house"
+      $(".nav_text").text "select your house:"
 
   updateURLHash = (text) ->
     if text
@@ -18,9 +24,11 @@ $(document).ready ->
     if house
       $("body").removeClass().addClass house
       $(".clear").css "display", "inline-block"
+      updateNav house
     else
       $("body").removeClass()
       $(".clear").hide()
+      updateNav false
 
 
   # check url hash on page load
@@ -37,8 +45,12 @@ $(document).ready ->
       updateTheme hash
       false
 
-  $(".house_activator").click ->
+  $(".nav_text").click ->
     $(".houses").toggleClass "active"
+    if $(".houses").hasClass("active")
+      $(".nav_text").text "hide houses"
+    else
+      $(".nav_text").text "select your house:"
     false
 
   $(".clear").click ->
@@ -51,11 +63,16 @@ $(document).ready ->
   $(".house a").click (event) ->
     event.preventDefault()
     house = $(this).data("house").toLowerCase()
-
-    # if ( house === "clear" ) {
-    #   house = false;
-    # }
     routeURLHash house
     false
 
   routeURLHash()
+
+# KeyboardJS.on "left, h", ->
+#   alert "asdf"
+#   prevNavItem()
+#   false
+
+# KeyboardJS.on "right, ;", ->
+#   nextNavItem()
+#   false
