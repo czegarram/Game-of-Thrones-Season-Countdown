@@ -17,7 +17,7 @@ $(document).ready(function(){
     if ( text ) {
       window.location.hash = text;
     } else {
-      window.location.hash = "";
+      history.pushState('', document.title, window.location.pathname);
     }
   };
 
@@ -52,13 +52,21 @@ $(document).ready(function(){
     return false;
   });
 
+$(".clear").click(function() {
+    $(".houses").removeClass("active");
+    updateActivatorText(false);
+    updateURLHash(false);
+    updateTheme(false);
+    return false;
+  });
+
   $(".house a").click(function(event) {
     event.preventDefault();
     var house = $(this).data('house').toLowerCase();
 
-    if ( house === "clear" ) {
-      house = false;
-    }
+    // if ( house === "clear" ) {
+    //   house = false;
+    // }
 
     routeURLHash(house);
     return false;
