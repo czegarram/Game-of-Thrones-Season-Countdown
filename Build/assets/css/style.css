@@ -1,0 +1,163 @@
+@import url(normalize.css);
+* {
+  text-rendering: optimizeLegibility; }
+
+html {
+  height: 100%; }
+
+body {
+  background: #111111 url(../bg.png) center top no-repeat;
+  background-size: cover;
+  color: #727272;
+  font-family: "trajan-sans-pro-1", "trajan-sans-pro-2", serif;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0; }
+
+.countdown {
+  width: 960px;
+  height: 100px;
+  max-width: 960px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -75px; }
+
+.info {
+  float: left;
+  width: 20%;
+  text-align: center; }
+
+.amount {
+  color: white;
+  font-family: "trajan-pro-3-1", "trajan-pro-3-2", serif;
+  font-weight: 300;
+  font-size: 3em;
+  line-height: 1.5em; }
+
+.label {
+  font-family: "trajan-pro-3-1", "trajan-pro-3-2", serif;
+  font-weight: 300; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center; }
+  footer > ul {
+    position: relative;
+    width: 600px;
+    margin: 0 auto; }
+  footer li {
+    display: inline-block;
+    font-size: 0.75em; }
+    footer li a {
+      padding: 1em 1em;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden; }
+    footer li.left, footer li.right {
+      position: absolute;
+      top: 1.5em; }
+    footer li.left {
+      left: -15px; }
+    footer li.right {
+      left: 460px;
+      text-align: center;
+      width: 180px; }
+    footer li.logo {
+      font-family: "trajan-pro-3-1", "trajan-pro-3-2", serif;
+      font-weight: 300;
+      position: relative;
+      font-size: 1.4em;
+      color: #999999;
+      z-index: 2; }
+      footer li.logo small {
+        font-size: 0.8em; }
+      footer li.logo:before {
+        content: "Season 4";
+        position: absolute;
+        font-size: 0.5em;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        right: 0;
+        bottom: 1em;
+        z-index: 1; }
+
+.houses {
+  width: 690px;
+  margin: 0 auto 4em; }
+  .houses li {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: transarent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 1em 1em;
+    opacity: 0;
+    visibility: hidden;
+    -moz-transform: scale(0.8) translateY(25px);
+    -webkit-transform: scale(0.8) translateY(25px);
+    -o-transform: scale(0.8) translateY(25px);
+    -ms-transform: scale(0.8) translateY(25px);
+    transform: scale(0.8) translateY(25px);
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden; }
+    .houses li a {
+      display: block;
+      padding: 0;
+      line-height: 100px;
+      font-size: 0.95em;
+      font-family: "trajan-sans-pro-1", "trajan-sans-pro-2", sans-serif;
+      font-weight: 400; }
+  .houses.active li {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+    -moz-transform: scale(1) translateY(25px);
+    -webkit-transform: scale(1) translateY(25px);
+    -o-transform: scale(1) translateY(25px);
+    -ms-transform: scale(1) translateY(25px);
+    transform: scale(1) translateY(25px);
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden; }
+
+.clear {
+  display: none;
+  background: transparent url(../clear.png) center center no-repeat;
+  background-size: 50%;
+  color: transparent; }
+  .clear:hover, .clear:focus {
+    background-image: url(../clear-hover.png); }
+    .clear:hover a, .clear:focus a {
+      color: transparent; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  line-height: 1.5em;
+  display: block; }
+  a:hover, a:focus {
+    color: #eeeeee; }
+
+body.tully {
+  background-color: green; }
