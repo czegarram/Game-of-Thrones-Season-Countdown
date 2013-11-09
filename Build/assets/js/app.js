@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
   hideHouses = function() {
     $(".houses").removeClass("active");
   };
@@ -30,6 +31,22 @@ $(document).ready(function(){
     }
   };
 
+  // check url hash on page load
+  routeURLHash = function(house) {
+    if ( house ) {
+      hideHouses();
+      updateActivatorText(house);
+      updateURLHash(house);
+      updateTheme(house);
+      return false;
+    } else {
+      var hash = window.location.hash.substring(1);
+      updateActivatorText(hash);
+      updateTheme(hash);
+      return false;
+    }
+  };
+
   $(".house_activator").click(function() {
     $(".houses").toggleClass("active");
     return false;
@@ -43,12 +60,10 @@ $(document).ready(function(){
       house = false;
     }
 
-    hideHouses();
-    updateActivatorText(house);
-    updateURLHash(house);
-    updateTheme(house);
-
+    routeURLHash(house);
     return false;
   });
+
+  routeURLHash();
 
 });
