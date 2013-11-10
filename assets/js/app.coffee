@@ -119,7 +119,7 @@ $(document).ready ->
     nextNavItem()
     false
 
-  Mousetrap.bind "esc, escape", (e) ->
+  Mousetrap.bind "esc", (e) ->
     e.preventDefault
     resetTheme()
     false

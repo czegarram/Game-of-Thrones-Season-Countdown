@@ -129,7 +129,7 @@
       nextNavItem();
       return false;
     });
-    Mousetrap.bind("esc, escape", function(e) {
+    Mousetrap.bind("esc", function(e) {
       e.preventDefault;
       resetTheme();
       return false;
