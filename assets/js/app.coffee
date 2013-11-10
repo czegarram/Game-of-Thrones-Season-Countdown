@@ -1,25 +1,25 @@
 
 $(document).ready ->
   runCountdown = ->
-    airDate = new Date(Date.UTC(2014, (3 - 1), 19, 3, 0, 0))
+    airDate = new Date(Date.UTC(2014, (3 - 1), 1, 3, 0, 0))
     $("#countdown").countdown
       until: airDate
       format: 'ODHMS'
       tickInterval: 1
-      # onTick: watchCountdown()
       layout: $("#countdown").html()
-
-  # watchCountdown = (periods) ->
-  #   if $("body").hasClass "slideshow"
-  #     alert "asdf"
-
-  # Mousetrap.bind "up up down down left right left right b a", (e) ->
-  #     e.preventDefault
-  #     # r = 1 + Math.floor(Math.random() * 9)
-  #     $("body").addClass("slideshow")
-
-
   runCountdown()
+
+  updateHouseQuote = (house) ->
+    houses =
+      targaryen:  "Fire and Blood"
+      baratheon:  "Ours is the Fury"
+      tully:      "Family Duty Honor"
+      lannister:  "Hear Me Roar"
+      tyrell:     "Growing Strong"
+      stark:      "Winter is Coming"
+      arryn:      "As High As Honor"
+      martell:    "Unbowed Unbent Unbroken"
+      greyjoy:    "We Do Not Sow"
 
   updateNav = (house) ->
     if house

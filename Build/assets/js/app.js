@@ -1,9 +1,9 @@
 (function() {
   $(document).ready(function() {
-    var activateHouse, hideHouses, nextNavItem, prevNavItem, resetTheme, routeURLHash, runCountdown, updateNav, updateNavText, updateTheme, updateURLHash;
+    var activateHouse, hideHouses, nextNavItem, prevNavItem, resetTheme, routeURLHash, runCountdown, updateHouseQuote, updateNav, updateNavText, updateTheme, updateURLHash;
     runCountdown = function() {
       var airDate;
-      airDate = new Date(Date.UTC(2014, 3 - 1, 19, 3, 0, 0));
+      airDate = new Date(Date.UTC(2014, 3 - 1, 1, 3, 0, 0));
       return $("#countdown").countdown({
         until: airDate,
         format: 'ODHMS',
@@ -12,6 +12,20 @@
       });
     };
     runCountdown();
+    updateHouseQuote = function(house) {
+      var houses;
+      return houses = {
+        targaryen: "Fire and Blood",
+        baratheon: "Ours is the Fury",
+        tully: "Family Duty Honor",
+        lannister: "Hear Me Roar",
+        tyrell: "Growing Strong",
+        stark: "Winter is Coming",
+        arryn: "As High As Honor",
+        martell: "Unbowed Unbent Unbroken",
+        greyjoy: "We Do Not Sow"
+      };
+    };
     updateNav = function(house) {
       if (house) {
         return $(".selector").addClass("active");
