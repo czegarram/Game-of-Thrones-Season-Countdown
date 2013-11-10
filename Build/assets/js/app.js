@@ -179,6 +179,11 @@
       $(".house:nth-child(9) a").click();
       return false;
     });
+    Mousetrap.bind("h", function(e) {
+      e.preventDefault;
+      $(".nav_text").click();
+      return false;
+    });
     return routeURLHash();
   });
 

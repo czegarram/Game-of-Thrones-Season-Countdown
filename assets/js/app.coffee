@@ -176,4 +176,10 @@ $(document).ready ->
     $(".house:nth-child(9) a").click()
     false
 
+
+  Mousetrap.bind "h", (e) ->
+    e.preventDefault
+    $(".nav_text").click()
+    false
+
   routeURLHash()
