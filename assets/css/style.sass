@@ -72,6 +72,58 @@ body
       background-image: url(../assets/greyjoy-logo.png)
       margin-top: -4em
 
+.mini_house_logo
+  background: transparent center center no-repeat
+  width: 100%
+  height: 100%
+  display: block
+  background-size: auto 55%
+  position: absolute
+  top: 0
+  pointer-events: none
+  opacity: 0.7
+
+.house a:hover+.mini_house_logo,
+.house a:focus+.mini_house_logo
+  opacity: 1
+
+[data-house="targaryen"]
+  @extend body.targaryen
+  &+.mini_house_logo
+    background-image: url(../assets/targaryen-logo.png)
+[data-house="baratheon"]
+  @extend body.baratheon
+  &+.mini_house_logo
+    background-image: url(../assets/baratheon-logo.png)
+[data-house="tully"]
+  @extend body.tully
+  &+.mini_house_logo
+    background-image: url(../assets/tully-logo.png)
+[data-house="lannister"]
+  @extend body.lannister
+  &+.mini_house_logo
+    background-image: url(../assets/lannister-logo.png)
+[data-house="tyrell"]
+  @extend body.tyrell
+  &+.mini_house_logo
+    background-image: url(../assets/tyrell-logo.png)
+[data-house="stark"]
+  @extend body.stark
+  &+.mini_house_logo
+    background-image: url(../assets/stark-logo.png)
+[data-house="arryn"]
+  @extend body.arryn
+  &+.mini_house_logo
+    background-image: url(../assets/arryn-logo.png)
+[data-house="martell"]
+  @extend body.martell
+  &+.mini_house_logo
+    background-image: url(../assets/martell-logo.png)
+[data-house="greyjoy"]
+  @extend body.greyjoy
+  &+.mini_house_logo
+    background-image: url(../assets/greyjoy-logo.png)
+
 .house_logo
   position: absolute
   top: 50%
@@ -127,15 +179,18 @@ body
   width: 300px
   margin: 0 auto
   position: relative
+  border-radius: 10px
+  box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.4), inset 0px 1px 0px 0px rgba(255,255,255,0.15)
   .nav
     display: none
   a
-    border: 1px solid rgba(255,255,255,0.2)
+    // border: 1px solid rgba(255,255,255,0.2)
     width: auto
     display: block
     padding: 0.6em
     border-radius: 15px
   &.active
+    box-shadow: none
     .nav
       display: block
       position: absolute
@@ -209,9 +264,9 @@ footer
   li
     width: 100px
     height: 100px
-    border-radius: 50%
-    background: transarent
-    border: 1px solid rgba(255,255,255,0.25)
+    // border-radius: 50%
+    background: transparent
+    // border: 1px solid rgba(255,255,255,0.25)
     margin: 0 1em 1em
     opacity: 0
     visibility: hidden
@@ -235,6 +290,11 @@ footer
       font-size: 0.95em
       font-family: "trajan-sans-pro-1","trajan-sans-pro-2", sans-serif
       font-weight: 400
+      background-image: url(../assets/bg.png)
+      border-radius: 50%
+      color: transparent
+      overflow: hidden
+      box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.2), inset 0px 1px 0px 0px rgba(255,255,255,0.15)
 
   &.active
     li
@@ -254,15 +314,17 @@ footer
       -webkit-backface-visibility: hidden
       -moz-backface-visibility: hidden
       -ms-backface-visibility: hidden
-.clear
-  display: none
-  background: transparent url(../assets/clear.png) center center no-repeat
-  background-size: 50%
-  color: transparent
-  &:hover, &:focus
-    background-image: url(../assets/clear-hover.png)
-    a
-      color: transparent
+  .clear
+    display: none
+    background: transparent url(../assets/clear.png) center center no-repeat
+    background-size: 50%
+    color: transparent
+    text-indent: -9999px
+    &:hover, &:focus
+      background-image: url(../assets/clear-hover.png)
+      text-indent: -9999px
+      a
+        // color: transparent
 a
   text-decoration: none
   color: inherit
@@ -271,6 +333,97 @@ a
   &:hover, &:focus
     color: #eee
 
+.social_links
+  position: absolute
+  bottom: 0
+  left: 0
+  padding: 0 0 1.5em 1.5em
+  opacity: 0.5
+  &:hover, &:focus
+    opacity: 1
+
+@media only screen and (min-width: 510px) and (max-width: 960px)
+  .countdown
+    width: 100%
+    // height: 100px
+    // max-width: 960px
+    // display: block
+    // position: absolute
+    // top: 50%
+    // left: 0
+    // right: 0
+    // margin-left: auto
+    // margin-right: auto
+    // margin-top: -75px
+  footer
+    width: 100%
+    .houses
+      width: 100%
+      li
+        // width: 20%
+@media only screen and (max-width: 510px)
+  body
+    font-size: 16px
+  .countdown
+    width: 100%
+    height: auto
+    margin-top: 2em
+    position: relative
+    top: 0px
+    .info
+      width: 50%
+      margin-bottom: 1em
+  .house_logo
+    top: 0
+    margin: 0 auto
+    width: 100%
+    height: auto
+    padding: 0
+    margin-top: 0 !important
+    background-size: 90% auto
+    background-position: center 2em
+    -moz-transform: scale(1) rotateZ(0)
+    -webkit-transform: scale(1) rotateZ(0)
+    -o-transform: scale(1) rotateZ(0)
+    -ms-transform: scale(1) rotateZ(0)
+    transform: scale(1) rotateZ(0)
+
+  footer
+    position: relative
+    top: 0
+    bottom: 0
+    width: 100%
+    margin-top: 2em
+    padding-top: 2em
+    > ul
+      width: 100%
+    .houses
+      width: 100%
+      height: 0
+      overflow: hidden
+      &.active
+        height: auto
+        margin-top: 1em
+      li
+        width: 45%
+        float: left
+        height: 50px
+        margin-right: 0
+        text-indent: 2em
+        padding: 0
+        .mini_house_logo
+          background-position: 1em center
+        a
+          border-radius: 10px
+          line-height: 50px
+          color: inherit
+  .social_links
+    margin-top: 1em
+    width: 100%
+    position: relative
+    top: 0
+    bottom: 0
+    text-align: center
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px)
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px)

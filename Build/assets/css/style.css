@@ -14,62 +14,104 @@ body {
   font-weight: 300;
   margin: 0;
   padding: 0; }
-  body.tully {
+  body.tully, [data-house="tully"] {
     background-color: #00173d;
     color: white; }
-    body.tully .house_logo {
+    body.tully .house_logo, [data-house="tully"] .house_logo {
       background-image: url(../tully-logo.png); }
-  body.targaryen {
+  body.targaryen, [data-house="targaryen"] {
     background-color: black;
     color: #cd381a; }
-    body.targaryen .house_logo {
+    body.targaryen .house_logo, [data-house="targaryen"] .house_logo {
       background-image: url(../targaryen-logo.png);
       opacity: 0.18;
       margin-top: -3em; }
-  body.baratheon {
+  body.baratheon, [data-house="baratheon"] {
     background-color: black;
     color: #fdce20; }
-    body.baratheon .house_logo {
+    body.baratheon .house_logo, [data-house="baratheon"] .house_logo {
       opacity: 0.15;
       background-image: url(../baratheon-logo.png);
       margin-top: -5em; }
-  body.lannister {
+  body.lannister, [data-house="lannister"] {
     background-color: #901510;
     color: #f1b52b; }
-    body.lannister .house_logo {
+    body.lannister .house_logo, [data-house="lannister"] .house_logo {
       background-image: url(../lannister-logo.png);
       margin-top: -3.5em;
       opacity: 0.15; }
-  body.tyrell {
+  body.tyrell, [data-house="tyrell"] {
     background-color: #006600;
     color: #f2b62e; }
-    body.tyrell .house_logo {
+    body.tyrell .house_logo, [data-house="tyrell"] .house_logo {
       background-image: url(../tyrell-logo.png);
       margin-top: -4em; }
-  body.stark {
+  body.stark, [data-house="stark"] {
     background-color: #989898;
     color: #ece6db; }
-    body.stark .house_logo {
+    body.stark .house_logo, [data-house="stark"] .house_logo {
       background-image: url(../stark-logo.png);
       opacity: 0.25; }
-  body.arryn {
+  body.arryn, [data-house="arryn"] {
     background-color: #151c53;
     color: #d1cebb; }
-    body.arryn .house_logo {
+    body.arryn .house_logo, [data-house="arryn"] .house_logo {
       background-image: url(../arryn-logo.png); }
-  body.martell {
+  body.martell, [data-house="martell"] {
     background-color: #e12312;
     color: #faa703; }
-    body.martell .house_logo {
+    body.martell .house_logo, [data-house="martell"] .house_logo {
       background-image: url(../martell-logo.png);
       opacity: 0.25;
       margin-top: -3.5em; }
-  body.greyjoy {
+  body.greyjoy, [data-house="greyjoy"] {
     background-color: black;
     color: #ffcc39; }
-    body.greyjoy .house_logo {
+    body.greyjoy .house_logo, [data-house="greyjoy"] .house_logo {
       background-image: url(../greyjoy-logo.png);
       margin-top: -4em; }
+
+.mini_house_logo {
+  background: transparent center center no-repeat;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-size: auto 55%;
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+  opacity: 0.7; }
+
+.house a:hover + .mini_house_logo,
+.house a:focus + .mini_house_logo {
+  opacity: 1; }
+
+[data-house="targaryen"] + .mini_house_logo {
+  background-image: url(../targaryen-logo.png); }
+
+[data-house="baratheon"] + .mini_house_logo {
+  background-image: url(../baratheon-logo.png); }
+
+[data-house="tully"] + .mini_house_logo {
+  background-image: url(../tully-logo.png); }
+
+[data-house="lannister"] + .mini_house_logo {
+  background-image: url(../lannister-logo.png); }
+
+[data-house="tyrell"] + .mini_house_logo {
+  background-image: url(../tyrell-logo.png); }
+
+[data-house="stark"] + .mini_house_logo {
+  background-image: url(../stark-logo.png); }
+
+[data-house="arryn"] + .mini_house_logo {
+  background-image: url(../arryn-logo.png); }
+
+[data-house="martell"] + .mini_house_logo {
+  background-image: url(../martell-logo.png); }
+
+[data-house="greyjoy"] + .mini_house_logo {
+  background-image: url(../greyjoy-logo.png); }
 
 .house_logo {
   position: absolute;
@@ -124,31 +166,34 @@ body {
 .selector {
   width: 300px;
   margin: 0 auto;
-  position: relative; }
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.4), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.15); }
   .selector .nav {
     display: none; }
   .selector a {
-    border: 1px solid rgba(255, 255, 255, 0.2);
     width: auto;
     display: block;
     padding: 0.6em;
     border-radius: 15px; }
-  .selector.active .nav {
-    display: block;
-    position: absolute;
-    top: -1.2em;
-    padding: 1em;
-    opacity: 0.75;
-    font-size: 1.3em; }
-    .selector.active .nav.left {
-      left: 0; }
-    .selector.active .nav.right {
-      right: 0; }
-  .selector.active a {
-    padding: 0;
-    border-color: rgba(255, 255, 255, 0);
-    font-family: "trajan-pro-3-1", "trajan-pro-3-2", serif;
-    font-size: 1em; }
+  .selector.active {
+    box-shadow: none; }
+    .selector.active .nav {
+      display: block;
+      position: absolute;
+      top: -1.2em;
+      padding: 1em;
+      opacity: 0.75;
+      font-size: 1.3em; }
+      .selector.active .nav.left {
+        left: 0; }
+      .selector.active .nav.right {
+        right: 0; }
+    .selector.active a {
+      padding: 0;
+      border-color: rgba(255, 255, 255, 0);
+      font-family: "trajan-pro-3-1", "trajan-pro-3-2", serif;
+      font-size: 1em; }
 
 footer {
   position: absolute;
@@ -205,9 +250,7 @@ footer {
   .houses li {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
-    background: transarent;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: transparent;
     margin: 0 1em 1em;
     opacity: 0;
     visibility: hidden;
@@ -230,7 +273,12 @@ footer {
       line-height: 100px;
       font-size: 0.95em;
       font-family: "trajan-sans-pro-1", "trajan-sans-pro-2", sans-serif;
-      font-weight: 400; }
+      font-weight: 400;
+      background-image: url(../bg.png);
+      border-radius: 50%;
+      color: transparent;
+      overflow: hidden;
+      box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.2), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.15); }
   .houses.active li {
     opacity: 1;
     visibility: visible;
@@ -248,16 +296,15 @@ footer {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden; }
-
-.clear {
-  display: none;
-  background: transparent url(../clear.png) center center no-repeat;
-  background-size: 50%;
-  color: transparent; }
-  .clear:hover, .clear:focus {
-    background-image: url(../clear-hover.png); }
-    .clear:hover a, .clear:focus a {
-      color: transparent; }
+  .houses .clear {
+    display: none;
+    background: transparent url(../clear.png) center center no-repeat;
+    background-size: 50%;
+    color: transparent;
+    text-indent: -9999px; }
+    .houses .clear:hover, .houses .clear:focus {
+      background-image: url(../clear-hover.png);
+      text-indent: -9999px; }
 
 a {
   text-decoration: none;
@@ -266,3 +313,87 @@ a {
   display: block; }
   a:hover, a:focus {
     color: #eeeeee; }
+
+.social_links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 0 1.5em 1.5em;
+  opacity: 0.5; }
+  .social_links:hover, .social_links:focus {
+    opacity: 1; }
+
+@media only screen and (min-width: 510px) and (max-width: 960px) {
+  .countdown {
+    width: 100%; }
+
+  footer {
+    width: 100%; }
+    footer .houses {
+      width: 100%; } }
+@media only screen and (max-width: 510px) {
+  body {
+    font-size: 16px; }
+
+  .countdown {
+    width: 100%;
+    height: auto;
+    margin-top: 2em;
+    position: relative;
+    top: 0px; }
+    .countdown .info {
+      width: 50%;
+      margin-bottom: 1em; }
+
+  .house_logo {
+    top: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin-top: 0 !important;
+    background-size: 90% auto;
+    background-position: center 2em;
+    -moz-transform: scale(1) rotateZ(0);
+    -webkit-transform: scale(1) rotateZ(0);
+    -o-transform: scale(1) rotateZ(0);
+    -ms-transform: scale(1) rotateZ(0);
+    transform: scale(1) rotateZ(0); }
+
+  footer {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 2em;
+    padding-top: 2em; }
+    footer > ul {
+      width: 100%; }
+    footer .houses {
+      width: 100%;
+      height: 0;
+      overflow: hidden; }
+      footer .houses.active {
+        height: auto;
+        margin-top: 1em; }
+      footer .houses li {
+        width: 45%;
+        float: left;
+        height: 50px;
+        margin-right: 0;
+        text-indent: 2em;
+        padding: 0; }
+        footer .houses li .mini_house_logo {
+          background-position: 1em center; }
+        footer .houses li a {
+          border-radius: 10px;
+          line-height: 50px;
+          color: inherit; }
+
+  .social_links {
+    margin-top: 1em;
+    width: 100%;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    text-align: center; } }
