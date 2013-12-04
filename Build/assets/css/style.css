@@ -396,4 +396,5 @@ a {
     position: relative;
     top: 0;
     bottom: 0;
-    text-align: center; } }
+    text-align: center;
+    padding-left: 0; } }
