@@ -30,6 +30,10 @@ $(document).ready ->
   hideHouses = ->
     $(".houses").removeClass "active"
 
+  googleClickTrack = (category, label, val) ->
+    ga 'send', "event", category, 'click', label, val
+    alert category, label
+
   activateHouse = (house) ->
     $(".house").removeClass("active")
     $("a[data-house='" + house + "']").parent().addClass("active")
@@ -51,10 +55,12 @@ $(document).ready ->
       $("body").removeClass().addClass house
       $(".clear").css "display", "inline-block"
       updateNav house
+      googleClickTrack("House", house, 1)
     else
       $("body").removeClass()
       $(".clear").hide()
       updateNav false
+      googleClickTrack("House", "Default", false)
 
   prevNavItem = ->
     $('.house.active').prev('.house').children('a').click()

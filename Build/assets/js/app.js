@@ -1,6 +1,6 @@
 (function() {
   $(document).ready(function() {
-    var activateHouse, hideHouses, nextNavItem, prevNavItem, resetTheme, routeURLHash, runCountdown, updateHouseQuote, updateNav, updateNavText, updateTheme, updateURLHash;
+    var activateHouse, googleClickTrack, hideHouses, nextNavItem, prevNavItem, resetTheme, routeURLHash, runCountdown, updateHouseQuote, updateNav, updateNavText, updateTheme, updateURLHash;
     runCountdown = function() {
       var airDate;
       airDate = new Date(Date.UTC(2014, 3 - 1, 30, 21, 0, 0));
@@ -36,6 +36,10 @@
     hideHouses = function() {
       return $(".houses").removeClass("active");
     };
+    googleClickTrack = function(category, label, val) {
+      ga('send', "event", category, 'click', label, val);
+      return alert(category, label);
+    };
     activateHouse = function(house) {
       $(".house").removeClass("active");
       return $("a[data-house='" + house + "']").parent().addClass("active");
@@ -58,11 +62,13 @@
       if (house) {
         $("body").removeClass().addClass(house);
         $(".clear").css("display", "inline-block");
-        return updateNav(house);
+        updateNav(house);
+        return googleClickTrack("House", house, 1);
       } else {
         $("body").removeClass();
         $(".clear").hide();
-        return updateNav(false);
+        updateNav(false);
+        return googleClickTrack("House", "Default", false);
       }
     };
     prevNavItem = function() {
