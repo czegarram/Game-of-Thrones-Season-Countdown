@@ -37,8 +37,7 @@
       return $(".houses").removeClass("active");
     };
     googleClickTrack = function(category, label, val) {
-      ga('send', "event", category, 'click', label, val);
-      return alert(category, label);
+      return console.log(category, label, val);
     };
     activateHouse = function(house) {
       $(".house").removeClass("active");
@@ -63,12 +62,12 @@
         $("body").removeClass().addClass(house);
         $(".clear").css("display", "inline-block");
         updateNav(house);
-        return googleClickTrack("House", house, 1);
+        return googleClickTrack("house", house, 1);
       } else {
         $("body").removeClass();
         $(".clear").hide();
         updateNav(false);
-        return googleClickTrack("House", "Default", false);
+        return googleClickTrack("house", "Default", false);
       }
     };
     prevNavItem = function() {
