@@ -1,7 +1,7 @@
 
 $(document).ready ->
   runCountdown = ->
-    airDate = new Date(Date.UTC(2014, (3 - 1), 30, 21, 0, 0))
+    airDate = new Date(Date.UTC(2014, 2, 30, 21, 0, 0))
     $("#countdown").countdown
       until: airDate
       format: 'ODHMS'
@@ -43,6 +43,12 @@ $(document).ready ->
     else
       $(".nav_text").text "Select your house:"
 
+  updateLocalStorage = (house) ->
+    if house
+      localStorage.setItem "house", house
+    else
+      localStorage.removeItem "house"
+
   updateURLHash = (text) ->
     if text
       window.location.hash = text
@@ -51,11 +57,13 @@ $(document).ready ->
 
   updateTheme = (house) ->
     if house
+      updateLocalStorage(house)
       $("body").removeClass().addClass house
       $(".clear").css "display", "inline-block"
       updateNav house
       googleClickTrack("house", house, 1)
     else
+      updateLocalStorage()
       $("body").removeClass()
       $(".clear").hide()
       updateNav false
@@ -69,19 +77,14 @@ $(document).ready ->
 
   # check url hash on page load
   routeURLHash = (house) ->
-    if house
-      hideHouses()
-      activateHouse house
-      updateNavText house
-      updateURLHash house
-      updateTheme house
-      false
-    else
-      hash = window.location.hash.substring(1)
-      updateNavText hash
-      activateHouse hash
-      updateTheme hash
-      false
+    unless house
+      house = window.location.hash.substring(1) || localStorage.getItem("house")
+    hideHouses()
+    activateHouse house
+    updateNavText house
+    updateURLHash house
+    updateTheme house
+    false
 
   resetTheme = ->
     $(".houses").removeClass "active"
