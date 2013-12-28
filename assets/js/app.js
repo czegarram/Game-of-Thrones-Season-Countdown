@@ -1,9 +1,9 @@
 (function() {
   $(document).ready(function() {
-    var activateHouse, googleClickTrack, hideHouses, nextNavItem, prevNavItem, resetTheme, routeURLHash, runCountdown, updateHouseQuote, updateNav, updateNavText, updateTheme, updateURLHash;
+    var activateHouse, googleClickTrack, hideHouses, nextNavItem, prevNavItem, resetTheme, routeURLHash, runCountdown, updateHouseQuote, updateLocalStorage, updateNav, updateNavText, updateTheme, updateURLHash;
     runCountdown = function() {
       var airDate;
-      airDate = new Date(Date.UTC(2014, 3 - 1, 30, 21, 0, 0));
+      airDate = new Date(Date.UTC(2014, 2, 30, 21, 0, 0));
       return $("#countdown").countdown({
         until: airDate,
         format: 'ODHMS',
@@ -50,6 +50,13 @@
         return $(".nav_text").text("Select your house:");
       }
     };
+    updateLocalStorage = function(house) {
+      if (house) {
+        return localStorage.setItem("house", house);
+      } else {
+        return localStorage.removeItem("house");
+      }
+    };
     updateURLHash = function(text) {
       if (text) {
         return window.location.hash = text;
@@ -59,11 +66,13 @@
     };
     updateTheme = function(house) {
       if (house) {
+        updateLocalStorage(house);
         $("body").removeClass().addClass(house);
         $(".clear").css("display", "inline-block");
         updateNav(house);
         return googleClickTrack("house", house, 1);
       } else {
+        updateLocalStorage();
         $("body").removeClass();
         $(".clear").hide();
         updateNav(false);
@@ -77,21 +86,15 @@
       return $('.house.active').next('.house').children('a').click();
     };
     routeURLHash = function(house) {
-      var hash;
-      if (house) {
-        hideHouses();
-        activateHouse(house);
-        updateNavText(house);
-        updateURLHash(house);
-        updateTheme(house);
-        return false;
-      } else {
-        hash = window.location.hash.substring(1);
-        updateNavText(hash);
-        activateHouse(hash);
-        updateTheme(hash);
-        return false;
+      if (!house) {
+        house = window.location.hash.substring(1) || localStorage.getItem("house");
       }
+      hideHouses();
+      activateHouse(house);
+      updateNavText(house);
+      updateURLHash(house);
+      updateTheme(house);
+      return false;
     };
     resetTheme = function() {
       $(".houses").removeClass("active");
