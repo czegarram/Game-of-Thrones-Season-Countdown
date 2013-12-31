@@ -30,9 +30,10 @@ $(document).ready ->
   hideHouses = ->
     $(".houses").removeClass "active"
 
-  googleClickTrack = (category, label, val) ->
-    console.log category, label, val
+  googleClickTrack = (category, action) ->
+    console.log category, action
     # no actual analytics yet
+    _gaq.push ["_trackEvent", category, action]
   activateHouse = (house) ->
     $(".house").removeClass("active")
     $("a[data-house='" + house + "']").parent().addClass("active")
@@ -58,16 +59,17 @@ $(document).ready ->
   updateTheme = (house) ->
     if house
       updateLocalStorage(house)
+      $("meta[name=title]").attr "content", house
       $("body").removeClass().addClass house
       $(".clear").css "display", "inline-block"
       updateNav house
-      googleClickTrack("house", house, 1)
+      googleClickTrack("house", house)
     else
       updateLocalStorage()
       $("body").removeClass()
       $(".clear").hide()
       updateNav false
-      googleClickTrack("house", "Default", false)
+      googleClickTrack("house", "Default")
 
   prevNavItem = ->
     $('.house.active').prev('.house').children('a').click()

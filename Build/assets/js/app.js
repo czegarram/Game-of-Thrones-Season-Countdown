@@ -36,8 +36,9 @@
     hideHouses = function() {
       return $(".houses").removeClass("active");
     };
-    googleClickTrack = function(category, label, val) {
-      return console.log(category, label, val);
+    googleClickTrack = function(category, action) {
+      console.log(category, action);
+      return _gaq.push(["_trackEvent", category, action]);
     };
     activateHouse = function(house) {
       $(".house").removeClass("active");
@@ -67,16 +68,17 @@
     updateTheme = function(house) {
       if (house) {
         updateLocalStorage(house);
+        $("meta[name=title]").attr("content", house);
         $("body").removeClass().addClass(house);
         $(".clear").css("display", "inline-block");
         updateNav(house);
-        return googleClickTrack("house", house, 1);
+        return googleClickTrack("house", house);
       } else {
         updateLocalStorage();
         $("body").removeClass();
         $(".clear").hide();
         updateNav(false);
-        return googleClickTrack("house", "Default", false);
+        return googleClickTrack("house", "Default");
       }
     };
     prevNavItem = function() {
