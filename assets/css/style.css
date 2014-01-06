@@ -1,5 +1,4 @@
-@import url(normalize.css);
-* {
+*, *:before, *:after {
   text-rendering: optimizeLegibility; }
 
 html {
@@ -133,6 +132,9 @@ body {
   -o-transform: scale(9) rotateZ(0);
   -ms-transform: scale(9) rotateZ(0);
   transform: scale(9) rotateZ(0); }
+
+.countdown_layout {
+  display: none; }
 
 .countdown {
   width: 960px;

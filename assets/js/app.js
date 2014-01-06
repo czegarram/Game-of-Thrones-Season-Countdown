@@ -8,7 +8,7 @@
         until: airDate,
         format: 'ODHMS',
         tickInterval: 1,
-        layout: $("#countdown").html()
+        layout: $(".countdown_layout").html()
       });
     };
     runCountdown();
