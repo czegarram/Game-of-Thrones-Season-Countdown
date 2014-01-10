@@ -3,7 +3,7 @@
     var activateHouse, googleClickTrack, hideHouses, nextNavItem, prevNavItem, resetTheme, routeURLHash, runCountdown, updateHouseQuote, updateLocalStorage, updateNav, updateNavText, updateTheme, updateURLHash;
     runCountdown = function() {
       var airDate;
-      airDate = new Date(Date.UTC(2014, 2, 30, 21, 0, 0));
+      airDate = new Date(Date.UTC(2014, 4, 6, 21, 0, 0));
       return $("#countdown").countdown({
         until: airDate,
         format: 'ODHMS',
