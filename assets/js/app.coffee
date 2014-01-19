@@ -1,7 +1,7 @@
 
 $(document).ready ->
   runCountdown = ->
-    airDate = new Date(Date.UTC(2014, 3, 6, 21, 0, 0))
+    airDate = new Date(Date.UTC(2014, 3, 6, 18, 0, 0))
     $("#countdown").countdown
       until: airDate
       format: 'ODHMS'
