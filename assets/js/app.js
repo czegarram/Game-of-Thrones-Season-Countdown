@@ -6,7 +6,7 @@
       airDate = new Date(Date.UTC(2014, 3, 6, 23, 0, 0));
       return $("#countdown").countdown({
         until: airDate,
-        format: 'ODHMS',
+        format: 'DHMS',
         tickInterval: 1,
         layout: $(".countdown_layout").html()
       });
