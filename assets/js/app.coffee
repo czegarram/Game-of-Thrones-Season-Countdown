@@ -20,19 +20,19 @@ $(document).ready ->
       arryn:      "As High As Honor"
       martell:    "Unbowed Unbent Unbroken"
       greyjoy:    "We Do Not Sow"
+    houses[house]
 
   updateNav = (house) ->
     if house
-      $(".selector").addClass "active"
+      $("footer").addClass "active"
     else
-      $(".selector").removeClass "active"
+      $("footer").removeClass "active"
 
   hideHouses = ->
     $(".houses").removeClass "active"
 
   googleClickTrack = (category, action) ->
     console.log category, action
-    # no actual analytics yet
     _gaq.push ["_trackEvent", category, action]
   activateHouse = (house) ->
     $(".house").removeClass("active")

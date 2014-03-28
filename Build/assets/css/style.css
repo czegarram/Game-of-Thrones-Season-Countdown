@@ -163,7 +163,8 @@ body {
 
 .label {
   font-family: "trajan-pro-3-1", "trajan-pro-3-2", serif;
-  font-weight: 300; }
+  font-weight: 300;
+  text-transform: lowercase; }
 
 .selector {
   width: 300px;
@@ -178,24 +179,6 @@ body {
     display: block;
     padding: 0.6em;
     border-radius: 15px; }
-  .selector.active {
-    box-shadow: none; }
-    .selector.active .nav {
-      display: block;
-      position: absolute;
-      top: -1.2em;
-      padding: 1em;
-      opacity: 0.75;
-      font-size: 1.3em; }
-      .selector.active .nav.left {
-        left: 0; }
-      .selector.active .nav.right {
-        right: 0; }
-    .selector.active a {
-      padding: 0;
-      border-color: rgba(255, 255, 255, 0);
-      font-family: "trajan-pro-3-1", "trajan-pro-3-2", serif;
-      font-size: 1em; }
 
 footer {
   position: absolute;
@@ -203,7 +186,88 @@ footer {
   left: 0;
   right: 0;
   text-align: center;
-  padding-bottom: 1em; }
+  padding-bottom: 1em;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden; }
+  footer .options_area {
+    visibility: hidden; }
+  footer.active {
+    -moz-transform: translateY(4em);
+    -webkit-transform: translateY(4em);
+    -o-transform: translateY(4em);
+    -ms-transform: translateY(4em);
+    transform: translateY(4em);
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden; }
+    footer.active ul {
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: all 200ms ease-in-out;
+      -moz-transition: all 200ms ease-in-out;
+      -ms-transition: all 200ms ease-in-out;
+      -o-transition: all 200ms ease-in-out;
+      transition: all 200ms ease-in-out;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden; }
+    footer.active:hover, footer.active:focus {
+      -moz-transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -o-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-transition: all 200ms ease-in-out;
+      -moz-transition: all 200ms ease-in-out;
+      -ms-transition: all 200ms ease-in-out;
+      -o-transition: all 200ms ease-in-out;
+      transition: all 200ms ease-in-out;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -ms-backface-visibility: hidden; }
+      footer.active:hover ul, footer.active:focus ul {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transition: all 200ms ease-in-out;
+        -moz-transition: all 200ms ease-in-out;
+        -ms-transition: all 200ms ease-in-out;
+        -o-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden; }
+    footer.active .selector {
+      box-shadow: none; }
+      footer.active .selector:hover .nav, footer.active .selector:focus .nav {
+        opacity: 1; }
+      footer.active .selector .nav {
+        display: block;
+        position: absolute;
+        top: -1.2em;
+        padding: 1em;
+        opacity: 0.75;
+        font-size: 1.3em;
+        opacity: 0.2; }
+        footer.active .selector .nav.left {
+          left: 0; }
+        footer.active .selector .nav.right {
+          right: 0; }
+      footer.active .selector a {
+        padding: 0;
+        border-color: rgba(255, 255, 255, 0);
+        font-family: "trajan-pro-3-1", "trajan-pro-3-2", serif;
+        font-size: 1em; }
   footer > ul {
     position: relative;
     width: 600px;
