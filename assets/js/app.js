@@ -14,7 +14,7 @@
     runCountdown();
     updateHouseQuote = function(house) {
       var houses;
-      return houses = {
+      houses = {
         targaryen: "Fire and Blood",
         baratheon: "Ours is the Fury",
         tully: "Family Duty Honor",
@@ -25,12 +25,13 @@
         martell: "Unbowed Unbent Unbroken",
         greyjoy: "We Do Not Sow"
       };
+      return houses[house];
     };
     updateNav = function(house) {
       if (house) {
-        return $(".selector").addClass("active");
+        return $("footer").addClass("active");
       } else {
-        return $(".selector").removeClass("active");
+        return $("footer").removeClass("active");
       }
     };
     hideHouses = function() {
