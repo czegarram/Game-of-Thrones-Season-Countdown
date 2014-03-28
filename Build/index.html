@@ -28,31 +28,8 @@
   <meta name="twitter:image" content="http://gameofthronescountdown.com/assets/facebook_icon.png">
 
   
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
 
-  <link rel='stylesheet' href='assets/css/reset.css'>
-<link rel='stylesheet' href='assets/css/style.css'>
+  <link rel='stylesheet' href='491817a1d85e22d30c8de3ee8112d6fa.css'>
 
   <title>Season 4 Premiere Countdown | Game of Thrones on HBO</title>
 
@@ -176,11 +153,7 @@
     })();
 
   </script>
-  <script src='assets/js/jquery-2.1.0.min.js'></script>
-<script src='assets/js/jquery.plugin.js'></script>
-<script src='assets/js/jquery.countdown.min.js'></script>
-<script src='assets/js/keyboard.js'></script>
-<script src='assets/js/app.js'></script>
+  <script src='2a32501be588f27211b63d4783a90c11.js'></script>
 
   <script type="text/javascript" src="//use.typekit.net/xkh8lla.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
