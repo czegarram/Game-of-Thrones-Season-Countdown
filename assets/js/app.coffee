@@ -1,9 +1,10 @@
 
 $(document).ready ->
   runCountdown = ->
-    airDate = new Date(Date.UTC(2014, 3, 6, 23, 0, 0))
+    airDate = new Date(2014, 3, 6, 21, 0, 0)
     $("#countdown").countdown
       until: airDate
+      timezone: -4
       format: 'DHMS'
       tickInterval: 1
       layout: $(".countdown_layout").html()
