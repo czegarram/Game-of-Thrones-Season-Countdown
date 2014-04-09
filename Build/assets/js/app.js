@@ -3,7 +3,7 @@
     var activateHouse, googleClickTrack, hideHouses, nextNavItem, prevNavItem, resetTheme, routeURLHash, runCountdown, updateHouseQuote, updateLocalStorage, updateNav, updateNavText, updateTheme, updateURLHash;
     runCountdown = function() {
       var airDate;
-      airDate = new Date(2014, 3, 6, 21, 0, 0);
+      airDate = new Date(2014, 3, 15, 22, 0, 0);
       return $("#countdown").countdown({
         until: airDate,
         timezone: -4,

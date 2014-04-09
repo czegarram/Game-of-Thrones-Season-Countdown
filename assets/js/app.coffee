@@ -1,7 +1,7 @@
 
 $(document).ready ->
   runCountdown = ->
-    airDate = new Date(2014, 3, 6, 21, 0, 0)
+    airDate = new Date(2014, 3, 15, 22, 0, 0)
     $("#countdown").countdown
       until: airDate
       timezone: -4
